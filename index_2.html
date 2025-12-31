@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>79. Yıl Mustafa İnan Seminerleri | İTÜ İnşaat Mühendisliği</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --itu-blue: #003057;
+            --itu-gold: #a29061;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #003057 0%, #001a30 100%);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--itu-gold);
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <header class="hero-gradient text-white min-h-[70vh] flex items-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000" alt="Arka Plan" class="w-full h-full object-cover">
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="mb-8 flex justify-center">
+                    <img src="https://www.itu.edu.tr/img/default-source/kurumsal-kimlik-rehberi/itu-logo.png" alt="İTÜ Logo" class="h-28 brightness-0 invert">
+                </div>
+                <h2 class="text-xl md:text-2xl font-light tracking-[0.3em] mb-4 uppercase">İstanbul Teknik Üniversitesi</h2>
+                <h3 class="text-lg md:text-xl text-slate-300 mb-10 font-medium">İnşaat Mühendisliği Bölümü</h3>
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-10 tracking-tight leading-tight">
+                    79. Yıl <span class="text-[#a29061]">Mustafa İnan</span> Seminerleri
+                </h1>
+                <div class="flex flex-wrap justify-center gap-5">
+                    <a href="#detaylar" class="bg-[#a29061] hover:bg-[#8e7d52] text-white px-10 py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-xl">Detayları İncele</a>
+                    <a href="79. Yıl Mustafa İnan Seminerleri.pdf" download class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white px-10 py-4 rounded-xl font-bold transition-all flex items-center">
+                        <i class="fas fa-download mr-3"></i> PDF İndir
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="detaylar" class="py-20 container mx-auto px-6 -mt-24">
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="glass-card p-10 rounded-3xl shadow-2xl">
+                <div class="w-14 h-14 bg-blue-50 text-[#003057] rounded-2xl flex items-center justify-center mb-6 text-2xl">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h4 class="font-bold text-2xl mb-4 text-[#003057]">Tarih ve Saat</h4>
+                <p class="text-slate-600 font-medium text-lg">8 Nisan - 20 Mayıs 2026</p>
+                <p class="text-[#a29061] font-bold mt-1">Her Çarşamba | 15.30 - 16.30</p>
+            </div>
+
+            <div class="glass-card p-10 rounded-3xl shadow-2xl">
+                <div class="w-14 h-14 bg-blue-50 text-[#003057] rounded-2xl flex items-center justify-center mb-6 text-2xl">
+                    <i class="fas fa-map-marked-alt"></i>
+                </div>
+                <h4 class="font-bold text-2xl mb-4 text-[#003057]">Etkinlik Yeri</h4>
+                <p class="text-slate-600 font-medium">İTÜ İnşaat Fakültesi</p>
+                <p class="text-slate-500 italic">Nahit Kumbasar Konferans Salonu</p>
+            </div>
+
+            <div class="glass-card p-10 rounded-3xl shadow-2xl">
+                <div class="w-14 h-14 bg-blue-50 text-[#003057] rounded-2xl flex items-center justify-center mb-6 text-2xl">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h4 class="font-bold text-2xl mb-4 text-[#003057]">Düzenleme Kurulu</h4>
+                <ul class="text-slate-600 space-y-2 font-medium">
+                    <li>Prof. Dr. Nihal ERATLI</li>
+                    <li>Doç. Dr. Aslı Y. DAYIOĞLU</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="w-full lg:w-1/2 relative">
+                    <div class="absolute -top-10 -left-10 w-40 h-40 bg-[#a29061]/10 rounded-full blur-3xl"></div>
+                    <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=1200" alt="Konferans" class="rounded-[2.5rem] shadow-2xl relative z-10 w-full object-cover aspect-video lg:aspect-square">
+                </div>
+                <div class="w-full lg:w-1/2">
+                    <h2 class="text-4xl font-extrabold mb-8 section-title text-[#003057]">Sunum Çağrısı</h2>
+                    <p class="text-xl text-slate-600 leading-relaxed mb-8">
+                        79. Yıl Mustafa İnan Seminerleri kapsamında gerçekleştirilmesini önerdiğiniz sunumlara ilişkin konuşma başlıkları ile en fazla 250 kelime uzunluğundaki konuşma özetlerinizi iletmenizi bekliyoruz.
+                    </p>
+                    <div class="bg-slate-900 text-white p-8 rounded-3xl relative overflow-hidden group">
+                        <div class="absolute right-0 top-0 h-full w-2 bg-[#a29061] transition-all group-hover:w-4"></div>
+                        <p class="text-slate-400 uppercase tracking-widest text-sm font-bold mb-2">Son Başvuru Tarihi</p>
+                        <p class="text-3xl font-black text-white italic">20 Ocak 2026</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#001a30] text-slate-400 py-16 border-t border-white/5">
+        <div class="container mx-auto px-6 text-center">
+            <img src="https://www.itu.edu.tr/img/default-source/kurumsal-kimlik-rehberi/itu-logo.png" alt="İTÜ" class="h-16 mx-auto mb-8 opacity-50 grayscale brightness-200">
+            <p class="text-lg font-medium mb-2">İstanbul Teknik Üniversitesi</p>
+            <p class="mb-8">İnşaat Mühendisliği Bölümü | Maslak, İstanbul</p>
+            <div class="flex justify-center space-x-8 mb-12">
+                <a href="#" class="hover:text-[#a29061] transition-colors text-xl"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="hover:text-[#a29061] transition-colors text-xl"><i class="fab fa-twitter"></i></a>
+                <a href="mailto:insaat@itu.edu.tr" class="hover:text-[#a29061] transition-colors text-xl"><i class="fas fa-envelope"></i></a>
+            </div>
+            <div class="pt-8 border-t border-white/5 text-sm tracking-wide">
+                &copy; 2026 Mustafa İnan Seminerleri. Tüm akademik hakları saklıdır.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
