@@ -1200,6 +1200,35 @@
             margin-top: 0.75rem;
         }
 
+        .btn-download-program {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-top: 1.5rem;
+            padding: 0.75rem 1.8rem;
+            background: transparent;
+            border: 1px solid rgba(201,169,98,0.35);
+            border-radius: 50px;
+            color: var(--gold);
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.35s ease;
+        }
+
+        .btn-download-program i {
+            font-size: 0.9rem;
+        }
+
+        .btn-download-program:hover {
+            background: rgba(201,169,98,0.12);
+            border-color: var(--gold);
+            box-shadow: 0 0 20px rgba(201,169,98,0.15);
+            transform: translateY(-2px);
+        }
+
         .seminar-list {
             display: flex;
             flex-direction: column;
@@ -1670,6 +1699,7 @@
                     <div class="hero-card-footer">
                         <div class="organizers">
                             <span>Düzenleme Kurulu</span>
+                            <p>Prof. Dr. Alper İLKİ</p>
                             <p>Prof. Dr. Nihal ERATLI</p>
                             <p>Doç. Dr. Aslı Y. DAYIOĞLU</p>
                         </div>
@@ -1759,6 +1789,7 @@
                     </div>
                     <h3>Düzenleme Kurulu</h3>
                     <p>
+                        <span class="highlight">Prof. Dr. Alper İLKİ</span><br>
                         <span class="highlight">Prof. Dr. Nihal ERATLI</span><br>
                         <span class="highlight">Doç. Dr. Aslı Y. DAYIOĞLU</span><br>
                         İTÜ İnşaat Mühendisliği Bölümü
@@ -1775,6 +1806,10 @@
                 <span class="section-label">2025–2026 Bahar Dönemi</span>
                 <h2 class="section-title">Seminer <span style="color: var(--gold)">Programı</span></h2>
                 <p class="program-subtitle">Her Çarşamba 15:30 – 16:30 &bull; Nahit Kumbasar Konferans Salonu</p>
+                <a href="M_INAN_PROGRAM.pdf" download class="btn-download-program">
+                    <i class="fas fa-file-pdf"></i>
+                    Programı İndir (PDF)
+                </a>
             </div>
             <div class="seminar-list">
 
