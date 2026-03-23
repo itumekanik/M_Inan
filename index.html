@@ -133,8 +133,13 @@
         }
 
         /* Masaüstünde hamburger ve mobile menü gizli */
-        .hamburger { display: none; }
-        .mobile-menu { display: none; }
+        .hamburger {
+            display: none;
+        }
+
+        .mobile-menu {
+            display: none;
+        }
 
         nav.scrolled {
             background: rgba(10, 10, 15, 0.95);
@@ -1620,7 +1625,7 @@
 
         .seminar-abstract-inner {
             padding: 1rem 0 0.5rem;
-            border-top: 1px solid rgba(255,255,255,0.06);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
             margin-top: 0.5rem;
             font-size: 0.88rem;
             color: var(--text-secondary);
@@ -1637,7 +1642,7 @@
 
         .btn-abstract {
             background: none;
-            border: 1px solid rgba(201,169,98,0.3);
+            border: 1px solid rgba(201, 169, 98, 0.3);
             color: var(--gold);
             font-size: 0.75rem;
             letter-spacing: 0.1em;
@@ -1652,7 +1657,7 @@
         }
 
         .btn-abstract:hover {
-            background: rgba(201,169,98,0.1);
+            background: rgba(201, 169, 98, 0.1);
             border-color: var(--gold);
         }
 
@@ -1661,7 +1666,9 @@
             font-size: 0.65rem;
         }
 
-        .btn-abstract.open i { transform: rotate(180deg); }
+        .btn-abstract.open i {
+            transform: rotate(180deg);
+        }
 
         /* Hibrit rozeti ve Zoom linki */
         .hybrid-info {
@@ -1672,9 +1679,9 @@
         }
 
         .badge-hybrid {
-            background: rgba(56,189,248,0.12);
+            background: rgba(56, 189, 248, 0.12);
             color: #38bdf8;
-            border: 1px solid rgba(56,189,248,0.25);
+            border: 1px solid rgba(56, 189, 248, 0.25);
             font-size: 0.68rem;
             letter-spacing: 0.12em;
             text-transform: uppercase;
@@ -1694,7 +1701,9 @@
             transition: opacity 0.2s;
         }
 
-        .zoom-link:hover { opacity: 1; }
+        .zoom-link:hover {
+            opacity: 1;
+        }
 
         .zoom-capacity {
             font-size: 0.68rem;
@@ -1713,9 +1722,9 @@
 
         .mini-hybrid {
             font-size: 0.62rem;
-            background: rgba(56,189,248,0.1);
+            background: rgba(56, 189, 248, 0.1);
             color: #38bdf8;
-            border: 1px solid rgba(56,189,248,0.2);
+            border: 1px solid rgba(56, 189, 248, 0.2);
             border-radius: 50px;
             padding: 0.1rem 0.5rem;
             font-weight: 600;
@@ -1733,7 +1742,9 @@
             transition: opacity 0.2s;
         }
 
-        .mini-zoom:hover { opacity: 1; }
+        .mini-zoom:hover {
+            opacity: 1;
+        }
 
         .mini-zoom-soon {
             font-size: 0.6rem;
@@ -1754,8 +1765,13 @@
             display: inline-flex;
         }
 
-        .mini-seminar.is-next .mini-hybrid { display: inline; }
-        .mini-seminar.is-next .mini-zoom-soon { display: inline; }
+        .mini-seminar.is-next .mini-hybrid {
+            display: inline;
+        }
+
+        .mini-seminar.is-next .mini-zoom-soon {
+            display: inline;
+        }
 
         .mini-title-row {
             display: flex;
@@ -1769,7 +1785,7 @@
 
         .mini-ozet-btn {
             background: none;
-            border: 1px solid rgba(201,169,98,0.25);
+            border: 1px solid rgba(201, 169, 98, 0.25);
             color: var(--gold);
             font-size: 0.6rem;
             padding: 0.1rem 0.5rem;
@@ -1783,7 +1799,7 @@
         }
 
         .mini-ozet-btn:hover {
-            background: rgba(201,169,98,0.1);
+            background: rgba(201, 169, 98, 0.1);
             border-color: var(--gold);
         }
 
@@ -1876,14 +1892,23 @@
                 transform-origin: center;
             }
 
-            .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-            .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-            .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+            .hamburger.open span:nth-child(1) {
+                transform: translateY(7px) rotate(45deg);
+            }
+
+            .hamburger.open span:nth-child(2) {
+                opacity: 0;
+                transform: scaleX(0);
+            }
+
+            .hamburger.open span:nth-child(3) {
+                transform: translateY(-7px) rotate(-45deg);
+            }
 
             .mobile-menu {
                 position: fixed;
                 inset: 0;
-                background: rgba(10,10,15,0.97);
+                background: rgba(10, 10, 15, 0.97);
                 backdrop-filter: blur(16px);
                 z-index: 1050;
                 display: flex;
@@ -1916,7 +1941,9 @@
                 transition: color 0.25s;
             }
 
-            .mobile-menu ul li a:hover { color: var(--gold); }
+            .mobile-menu ul li a:hover {
+                color: var(--gold);
+            }
         }
 
         /* ── Responsive: Mobil 768px ── */
@@ -2216,11 +2243,13 @@
                                 <div class="mini-speaker">Ario Ceccotti</div>
                                 <div class="mini-title-row">
                                     <div class="mini-title">The tree has grown</div>
-                                    <button class="mini-ozet-btn" onclick="openAbstractFromMini(0)"><i class="fas fa-align-left"></i> Özet</button>
+                                    <button class="mini-ozet-btn" onclick="openAbstractFromMini(0)"><i
+                                            class="fas fa-align-left"></i> Özet</button>
                                 </div>
                                 <div class="mini-actions">
                                     <span class="mini-hybrid">🖥 Hibrit</span>
-                                    <a href="https://zoom.us/j/97570347412?pwd=tpstOKgHFwBuabzu3ilZahc4V1aEQd.1" target="_blank" class="mini-zoom"><i class="fas fa-video"></i> Zoom</a>
+                                    <a href="https://zoom.us/j/97570347412?pwd=tpstOKgHFwBuabzu3ilZahc4V1aEQd.1"
+                                        target="_blank" class="mini-zoom"><i class="fas fa-video"></i> Zoom</a>
                                 </div>
                             </div>
                             <div class="mini-badge upcoming">●</div>
@@ -2235,7 +2264,8 @@
                                 <div class="mini-speaker">Bahar Ayhan, Erol Lale, G. Cusatis</div>
                                 <div class="mini-title-row">
                                     <div class="mini-title">Taze Betonun Sayısal Modellenmesi</div>
-                                    <button class="mini-ozet-btn" onclick="openAbstractFromMini(1)"><i class="fas fa-align-left"></i> Özet</button>
+                                    <button class="mini-ozet-btn" onclick="openAbstractFromMini(1)"><i
+                                            class="fas fa-align-left"></i> Özet</button>
                                 </div>
                                 <div class="mini-actions">
                                     <span class="mini-hybrid">🖥 Hibrit</span>
@@ -2254,7 +2284,8 @@
                                 <div class="mini-speaker">Emre Gönülcü</div>
                                 <div class="mini-title-row">
                                     <div class="mini-title">Yapı Sağlığı İzleme Yöntemi Önerisi</div>
-                                    <button class="mini-ozet-btn" onclick="openAbstractFromMini(2)"><i class="fas fa-align-left"></i> Özet</button>
+                                    <button class="mini-ozet-btn" onclick="openAbstractFromMini(2)"><i
+                                            class="fas fa-align-left"></i> Özet</button>
                                 </div>
                                 <div class="mini-actions">
                                     <span class="mini-hybrid">🖥 Hibrit</span>
@@ -2273,7 +2304,8 @@
                                 <div class="mini-speaker">M. Çelik, E. Demirkan, A. F. Yıldırım</div>
                                 <div class="mini-title-row">
                                     <div class="mini-title">Fonksiyonel Dereceli Malzeme Kirişlerde Titreşim</div>
-                                    <button class="mini-ozet-btn" onclick="openAbstractFromMini(3)"><i class="fas fa-align-left"></i> Özet</button>
+                                    <button class="mini-ozet-btn" onclick="openAbstractFromMini(3)"><i
+                                            class="fas fa-align-left"></i> Özet</button>
                                 </div>
                                 <div class="mini-actions">
                                     <span class="mini-hybrid">🖥 Hibrit</span>
@@ -2292,7 +2324,8 @@
                                 <div class="mini-speaker">Özgür Kırca</div>
                                 <div class="mini-title-row">
                                     <div class="mini-title">Deniz Yapıları Etrafında Sıvılaşma Mekaniği</div>
-                                    <button class="mini-ozet-btn" onclick="openAbstractFromMini(4)"><i class="fas fa-align-left"></i> Özet</button>
+                                    <button class="mini-ozet-btn" onclick="openAbstractFromMini(4)"><i
+                                            class="fas fa-align-left"></i> Özet</button>
                                 </div>
                                 <div class="mini-actions">
                                     <span class="mini-hybrid">🖥 Hibrit</span>
@@ -2311,7 +2344,8 @@
                                 <div class="mini-speaker">Osman Bulut, Ö. C. Cücemen</div>
                                 <div class="mini-title-row">
                                     <div class="mini-title">Termal Yükleme Altında Gerilme Yığılmaları</div>
-                                    <button class="mini-ozet-btn" onclick="openAbstractFromMini(5)"><i class="fas fa-align-left"></i> Özet</button>
+                                    <button class="mini-ozet-btn" onclick="openAbstractFromMini(5)"><i
+                                            class="fas fa-align-left"></i> Özet</button>
                                 </div>
                                 <div class="mini-actions">
                                     <span class="mini-hybrid">🖥 Hibrit</span>
@@ -2355,9 +2389,15 @@
                     <div class="hero-card-footer">
                         <div class="organizers">
                             <span>Düzenleme Kurulu</span>
-                            <p>Prof. Dr. Alper İLKİ <span style="opacity:0.55; font-size:0.78em;">(<a href="mailto:ailki@itu.edu.tr" style="color:inherit;">ailki@itu.edu.tr</a>)</span></p>
-                            <p>Prof. Dr. Nihal ERATLI <span style="opacity:0.55; font-size:0.78em;">(<a href="mailto:eratli@itu.edu.tr" style="color:inherit;">eratli@itu.edu.tr</a>)</span></p>
-                            <p>Doç. Dr. Aslı Y. DAYIOĞLU <span style="opacity:0.55; font-size:0.78em;">(<a href="mailto:yalcinas@itu.eu.tr" style="color:inherit;">yalcinas@itu.eu.tr</a>)</span></p>
+                            <p>Prof. Dr. Alper İLKİ <span style="opacity:0.55; font-size:0.78em;">(<a
+                                        href="mailto:ailki@itu.edu.tr"
+                                        style="color:inherit;">ailki@itu.edu.tr</a>)</span></p>
+                            <p>Prof. Dr. Nihal ERATLI <span style="opacity:0.55; font-size:0.78em;">(<a
+                                        href="mailto:eratli@itu.edu.tr"
+                                        style="color:inherit;">eratli@itu.edu.tr</a>)</span></p>
+                            <p>Doç. Dr. Aslı Y. DAYIOĞLU <span style="opacity:0.55; font-size:0.78em;">(<a
+                                        href="mailto:yalcinas@itu.eu.tr"
+                                        style="color:inherit;">yalcinas@itu.eu.tr</a>)</span></p>
                         </div>
                         <img src="itu-logo.png" alt="İTÜ Seal" class="itu-seal">
                     </div>
@@ -2424,7 +2464,7 @@
                     <h3>Tarih & Saat</h3>
                     <p>
                         <span class="highlight">8 Nisan – 20 Mayıs 2026</span> tarihleri arasında
-                        her Çarşamba günü <span class="highlight">15:30 – 16:30</span> saatleri
+                        Çarşamba günleri <span class="highlight">15:30 – 16:30</span> saatleri
                         arasında gerçekleştirilecektir.
                     </p>
                 </div>
@@ -2461,7 +2501,7 @@
             <div class="program-header reveal">
                 <span class="section-label">2025–2026 Bahar Dönemi</span>
                 <h2 class="section-title">Seminer <span style="color: var(--gold)">Programı</span></h2>
-                <p class="program-subtitle">Her Çarşamba 15:30 – 16:30 &bull; Nahit Kumbasar Konferans Salonu</p>
+                <p class="program-subtitle">Çarşamba 15:30 – 16:30 &bull; Nahit Kumbasar Konferans Salonu</p>
                 <a href="M_INAN_PROGRAM.pdf" download class="btn-download-program">
                     <i class="fas fa-file-pdf"></i>
                     Programı İndir (PDF)
@@ -2485,7 +2525,8 @@
                             </button>
                             <div class="hybrid-info">
                                 <span class="badge-hybrid">🖥 Hibrit</span>
-                                <a href="https://zoom.us/j/97570347412?pwd=tpstOKgHFwBuabzu3ilZahc4V1aEQd.1" target="_blank" class="zoom-link">
+                                <a href="https://zoom.us/j/97570347412?pwd=tpstOKgHFwBuabzu3ilZahc4V1aEQd.1"
+                                    target="_blank" class="zoom-link">
                                     <i class="fas fa-video"></i> Zoom ile Katıl
                                 </a>
                                 <span class="zoom-capacity">(max. 100 kişi)</span>
@@ -2509,7 +2550,8 @@
                     </div>
                     <div class="seminar-info">
                         <div class="seminar-speakers">Bahar Ayhan, Erol Lale, Gianluca Cusatis</div>
-                        <div class="seminar-title-text">Taze Betonun Ayrık Elemanlar Yöntemiyle Sayısal Modellenmesi</div>
+                        <div class="seminar-title-text">Taze Betonun Ayrık Elemanlar Yöntemiyle Sayısal Modellenmesi
+                        </div>
                         <div class="seminar-actions">
                             <button class="btn-abstract" onclick="toggleAbstract(this)">
                                 <i class="fas fa-chevron-down"></i> Özet
@@ -2537,7 +2579,8 @@
                     </div>
                     <div class="seminar-info">
                         <div class="seminar-speakers">Emre Gönülcü</div>
-                        <div class="seminar-title-text">Bina tipi taşıyıcı sistemlerde bir yapı sağlığı izleme yöntemi önerisi: basitleştirilmiş sayısal model ve hasar tespit algoritması</div>
+                        <div class="seminar-title-text">Bina tipi taşıyıcı sistemlerde bir yapı sağlığı izleme yöntemi
+                            önerisi: basitleştirilmiş sayısal model ve hasar tespit algoritması</div>
                         <div class="seminar-actions">
                             <button class="btn-abstract" onclick="toggleAbstract(this)">
                                 <i class="fas fa-chevron-down"></i> Özet
@@ -2565,7 +2608,8 @@
                     </div>
                     <div class="seminar-info">
                         <div class="seminar-speakers">Murat Çelik, Erol Demirkan, Ahmet Feyzi Yıldırım</div>
-                        <div class="seminar-title-text">Kayma deformasyonuna uğrayabilen fonksiyonel dereceli malzeme kirişlerde titreşim bileşenlerinin analitik ve sayısal incelenmesi</div>
+                        <div class="seminar-title-text">Kayma deformasyonuna uğrayabilen fonksiyonel dereceli malzeme
+                            kirişlerde titreşim bileşenlerinin analitik ve sayısal incelenmesi</div>
                         <div class="seminar-actions">
                             <button class="btn-abstract" onclick="toggleAbstract(this)">
                                 <i class="fas fa-chevron-down"></i> Özet
@@ -2593,7 +2637,8 @@
                     </div>
                     <div class="seminar-info">
                         <div class="seminar-speakers">Özgür Kırca</div>
-                        <div class="seminar-title-text">Deniz Yapıları Etrafında Dalga Kaynaklı Sıvılaşma Mekaniğinin Modellenmesi: Güncel Yaklaşımlar ve Büyük Ölçekli Deneyler</div>
+                        <div class="seminar-title-text">Deniz Yapıları Etrafında Dalga Kaynaklı Sıvılaşma Mekaniğinin
+                            Modellenmesi: Güncel Yaklaşımlar ve Büyük Ölçekli Deneyler</div>
                         <div class="seminar-actions">
                             <button class="btn-abstract" onclick="toggleAbstract(this)">
                                 <i class="fas fa-chevron-down"></i> Özet
@@ -2621,7 +2666,8 @@
                     </div>
                     <div class="seminar-info">
                         <div class="seminar-speakers">Osman Bulut, Ömer Canbey Cücemen</div>
-                        <div class="seminar-title-text">Kompozit/Hibrit Bileşenlerde Termal Yükleme Altında Gerilme Yığılmaları: Deneysel Fotoelastisite ve Sonlu Eleman Karşılaştırması</div>
+                        <div class="seminar-title-text">Kompozit/Hibrit Bileşenlerde Termal Yükleme Altında Gerilme
+                            Yığılmaları: Deneysel Fotoelastisite ve Sonlu Eleman Karşılaştırması</div>
                         <div class="seminar-actions">
                             <button class="btn-abstract" onclick="toggleAbstract(this)">
                                 <i class="fas fa-chevron-down"></i> Özet
@@ -2676,19 +2722,22 @@
                         <ul>
                             <li>
                                 <a href="mailto:ailki@itu.edu.tr">
-                                    <i class="fas fa-envelope" style="font-size:0.7rem; margin-right:0.4rem; opacity:0.6;"></i>
+                                    <i class="fas fa-envelope"
+                                        style="font-size:0.7rem; margin-right:0.4rem; opacity:0.6;"></i>
                                     Prof. Dr. Alper İLKİ
                                 </a>
                             </li>
                             <li>
                                 <a href="mailto:eratli@itu.edu.tr">
-                                    <i class="fas fa-envelope" style="font-size:0.7rem; margin-right:0.4rem; opacity:0.6;"></i>
+                                    <i class="fas fa-envelope"
+                                        style="font-size:0.7rem; margin-right:0.4rem; opacity:0.6;"></i>
                                     Prof. Dr. Nihal ERATLI
                                 </a>
                             </li>
                             <li>
                                 <a href="mailto:yalcinas@itu.eu.tr">
-                                    <i class="fas fa-envelope" style="font-size:0.7rem; margin-right:0.4rem; opacity:0.6;"></i>
+                                    <i class="fas fa-envelope"
+                                        style="font-size:0.7rem; margin-right:0.4rem; opacity:0.6;"></i>
                                     Doç. Dr. Aslı Y. DAYIOĞLU
                                 </a>
                             </li>
