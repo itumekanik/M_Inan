@@ -1757,6 +1757,16 @@
         .mini-seminar.is-next .mini-hybrid { display: inline; }
         .mini-seminar.is-next .mini-zoom-soon { display: inline; }
 
+        .mini-title-row {
+            display: flex;
+            align-items: baseline;
+            gap: 0.4rem;
+        }
+
+        .mini-title-row .mini-title {
+            flex: 1;
+        }
+
         .mini-ozet-btn {
             background: none;
             border: 1px solid rgba(201,169,98,0.25);
@@ -2204,11 +2214,13 @@
                             </div>
                             <div class="mini-info">
                                 <div class="mini-speaker">Ario Ceccotti</div>
-                                <div class="mini-title">The tree has grown</div>
+                                <div class="mini-title-row">
+                                    <div class="mini-title">The tree has grown</div>
+                                    <button class="mini-ozet-btn" onclick="openAbstractFromMini(0)"><i class="fas fa-align-left"></i> Özet</button>
+                                </div>
                                 <div class="mini-actions">
                                     <span class="mini-hybrid">🖥 Hibrit</span>
                                     <a href="https://zoom.us/j/97570347412?pwd=tpstOKgHFwBuabzu3ilZahc4V1aEQd.1" target="_blank" class="mini-zoom"><i class="fas fa-video"></i> Zoom</a>
-                                    <button class="mini-ozet-btn" onclick="openAbstractFromMini(0)"><i class="fas fa-align-left"></i> Özet</button>
                                 </div>
                             </div>
                             <div class="mini-badge upcoming">●</div>
@@ -2221,11 +2233,13 @@
                             </div>
                             <div class="mini-info">
                                 <div class="mini-speaker">Bahar Ayhan, Erol Lale, G. Cusatis</div>
-                                <div class="mini-title">Taze Betonun Sayısal Modellenmesi</div>
+                                <div class="mini-title-row">
+                                    <div class="mini-title">Taze Betonun Sayısal Modellenmesi</div>
+                                    <button class="mini-ozet-btn" onclick="openAbstractFromMini(1)"><i class="fas fa-align-left"></i> Özet</button>
+                                </div>
                                 <div class="mini-actions">
                                     <span class="mini-hybrid">🖥 Hibrit</span>
                                     <span class="mini-zoom-soon">Zoom yakında</span>
-                                    <button class="mini-ozet-btn" onclick="openAbstractFromMini(1)"><i class="fas fa-align-left"></i> Özet</button>
                                 </div>
                             </div>
                             <div class="mini-badge upcoming">●</div>
@@ -2238,11 +2252,13 @@
                             </div>
                             <div class="mini-info">
                                 <div class="mini-speaker">Emre Gönülcü</div>
-                                <div class="mini-title">Yapı Sağlığı İzleme Yöntemi Önerisi</div>
+                                <div class="mini-title-row">
+                                    <div class="mini-title">Yapı Sağlığı İzleme Yöntemi Önerisi</div>
+                                    <button class="mini-ozet-btn" onclick="openAbstractFromMini(2)"><i class="fas fa-align-left"></i> Özet</button>
+                                </div>
                                 <div class="mini-actions">
                                     <span class="mini-hybrid">🖥 Hibrit</span>
                                     <span class="mini-zoom-soon">Zoom yakında</span>
-                                    <button class="mini-ozet-btn" onclick="openAbstractFromMini(2)"><i class="fas fa-align-left"></i> Özet</button>
                                 </div>
                             </div>
                             <div class="mini-badge upcoming">●</div>
@@ -2255,11 +2271,13 @@
                             </div>
                             <div class="mini-info">
                                 <div class="mini-speaker">M. Çelik, E. Demirkan, A. F. Yıldırım</div>
-                                <div class="mini-title">Fonksiyonel Dereceli Malzeme Kirişlerde Titreşim</div>
+                                <div class="mini-title-row">
+                                    <div class="mini-title">Fonksiyonel Dereceli Malzeme Kirişlerde Titreşim</div>
+                                    <button class="mini-ozet-btn" onclick="openAbstractFromMini(3)"><i class="fas fa-align-left"></i> Özet</button>
+                                </div>
                                 <div class="mini-actions">
                                     <span class="mini-hybrid">🖥 Hibrit</span>
                                     <span class="mini-zoom-soon">Zoom yakında</span>
-                                    <button class="mini-ozet-btn" onclick="openAbstractFromMini(3)"><i class="fas fa-align-left"></i> Özet</button>
                                 </div>
                             </div>
                             <div class="mini-badge upcoming">●</div>
@@ -2272,11 +2290,13 @@
                             </div>
                             <div class="mini-info">
                                 <div class="mini-speaker">Özgür Kırca</div>
-                                <div class="mini-title">Deniz Yapıları Etrafında Sıvılaşma Mekaniği</div>
+                                <div class="mini-title-row">
+                                    <div class="mini-title">Deniz Yapıları Etrafında Sıvılaşma Mekaniği</div>
+                                    <button class="mini-ozet-btn" onclick="openAbstractFromMini(4)"><i class="fas fa-align-left"></i> Özet</button>
+                                </div>
                                 <div class="mini-actions">
                                     <span class="mini-hybrid">🖥 Hibrit</span>
                                     <span class="mini-zoom-soon">Zoom yakında</span>
-                                    <button class="mini-ozet-btn" onclick="openAbstractFromMini(4)"><i class="fas fa-align-left"></i> Özet</button>
                                 </div>
                             </div>
                             <div class="mini-badge upcoming">●</div>
@@ -2289,11 +2309,13 @@
                             </div>
                             <div class="mini-info">
                                 <div class="mini-speaker">Osman Bulut, Ö. C. Cücemen</div>
-                                <div class="mini-title">Termal Yükleme Altında Gerilme Yığılmaları</div>
+                                <div class="mini-title-row">
+                                    <div class="mini-title">Termal Yükleme Altında Gerilme Yığılmaları</div>
+                                    <button class="mini-ozet-btn" onclick="openAbstractFromMini(5)"><i class="fas fa-align-left"></i> Özet</button>
+                                </div>
                                 <div class="mini-actions">
                                     <span class="mini-hybrid">🖥 Hibrit</span>
                                     <span class="mini-zoom-soon">Zoom yakında</span>
-                                    <button class="mini-ozet-btn" onclick="openAbstractFromMini(5)"><i class="fas fa-align-left"></i> Özet</button>
                                 </div>
                             </div>
                             <div class="mini-badge upcoming">●</div>
