@@ -781,6 +781,7 @@
             line-height: 1.35;
             display: -webkit-box;
             -webkit-line-clamp: 2;
+            line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
@@ -1940,7 +1941,7 @@
             <li><a href="#about">Hakkında</a></li>
             <li><a href="#details">Detaylar</a></li>
             <li><a href="#program">Program</a></li>
-            <li><a href="#cta">İletişim</a></li>
+            <li><a href="#iletisim">İletişim</a></li>
         </ul>
         <button class="hamburger" id="hamburger" aria-label="Menü" aria-expanded="false">
             <span></span><span></span><span></span>
@@ -1954,7 +1955,7 @@
             <li><a href="#about">Hakkında</a></li>
             <li><a href="#details">Detaylar</a></li>
             <li><a href="#program">Program</a></li>
-            <li><a href="#cta">İletişim</a></li>
+            <li><a href="#iletisim">İletişim</a></li>
         </ul>
     </div>
 
@@ -1994,7 +1995,7 @@
                         <i class="far fa-clock"></i>
                         <div>
                             <span>Saat</span>
-                            <strong>Her Çarşamba 15:30</strong>
+                            <strong>Çarşamba Günleri 15:30</strong>
                         </div>
                     </div>
                     <div class="hero-meta-item">
@@ -2131,9 +2132,9 @@
                     <div class="hero-card-footer">
                         <div class="organizers">
                             <span>Düzenleme Kurulu</span>
-                            <p>Prof. Dr. Alper İLKİ</p>
-                            <p>Prof. Dr. Nihal ERATLI</p>
-                            <p>Doç. Dr. Aslı Y. DAYIOĞLU</p>
+                            <p>Prof. Dr. Alper İLKİ <span style="opacity:0.55; font-size:0.78em;">(<a href="mailto:ailki@itu.edu.tr" style="color:inherit;">ailki@itu.edu.tr</a>)</span></p>
+                            <p>Prof. Dr. Nihal ERATLI <span style="opacity:0.55; font-size:0.78em;">(<a href="mailto:eratli@itu.edu.tr" style="color:inherit;">eratli@itu.edu.tr</a>)</span></p>
+                            <p>Doç. Dr. Aslı Y. DAYIOĞLU <span style="opacity:0.55; font-size:0.78em;">(<a href="mailto:yalcinas@itu.eu.tr" style="color:inherit;">yalcinas@itu.eu.tr</a>)</span></p>
                         </div>
                         <img src="itu-logo.png" alt="İTÜ Seal" class="itu-seal">
                     </div>
@@ -2338,37 +2339,11 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta" id="cta">
-        <div class="cta-bg">
-            <!-- <img src="" alt="Conference"> -->
-        </div>
-        <div class="cta-container reveal">
-            <span class="section-label">Sunum Çağrısı</span>
-            <h2 class="cta-title">
-                Bilginizi<br>
-                <span style="color: var(--gold)">Paylaşın</span>
-            </h2>
-            <p class="cta-text">
-                79. Yıl Mustafa İnan Seminerleri kapsamında sunumunuzu gerçekleştirmek için
-                konuşma başlığınızı ve en fazla 250 kelimelik özetinizi 20 Ocak 2026 tarihine
-                kadar iletmenizi bekliyoruz.
-            </p>
-            <div class="cta-buttons">
-                <a href="mailto:insaatmuh@itu.edu.tr" class="btn-primary">
-                    <i class="fas fa-envelope"></i>
-                    Başvuru Yap
-                </a>
-                <a href="79. Yıl Mustafa İnan Seminerleri.pdf" class="btn-secondary" download>
-                    <i class="fas fa-file-pdf"></i>
-                    Detaylı Bilgi
-                </a>
-            </div>
-        </div>
-    </section>
+
+
 
     <!-- Footer -->
-    <footer>
+    <footer id="iletisim">
         <div class="footer-container">
             <div class="footer-top">
                 <div class="footer-brand">
@@ -2388,7 +2363,30 @@
                             <li><a href="#hero">Ana Sayfa</a></li>
                             <li><a href="#about">Hakkında</a></li>
                             <li><a href="#details">Detaylar</a></li>
-                            <li><a href="#cta">Başvuru</a></li>
+                            <li><a href="#program">Program</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Düzenleme Kurulu</h4>
+                        <ul>
+                            <li>
+                                <a href="mailto:ailki@itu.edu.tr">
+                                    <i class="fas fa-envelope" style="font-size:0.7rem; margin-right:0.4rem; opacity:0.6;"></i>
+                                    Prof. Dr. Alper İLKİ
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:eratli@itu.edu.tr">
+                                    <i class="fas fa-envelope" style="font-size:0.7rem; margin-right:0.4rem; opacity:0.6;"></i>
+                                    Prof. Dr. Nihal ERATLI
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:yalcinas@itu.eu.tr">
+                                    <i class="fas fa-envelope" style="font-size:0.7rem; margin-right:0.4rem; opacity:0.6;"></i>
+                                    Doç. Dr. Aslı Y. DAYIOĞLU
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <div class="footer-column">
