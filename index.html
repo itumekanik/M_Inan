@@ -1741,6 +1741,22 @@
             opacity: 0.6;
         }
 
+        /* Hibrit + Zoom sadece aktif (sıradaki) seminerde görünür */
+        .mini-seminar .mini-hybrid,
+        .mini-seminar .mini-zoom,
+        .mini-seminar .mini-zoom-soon {
+            display: none;
+        }
+
+        .mini-seminar.is-next .mini-hybrid,
+        .mini-seminar.is-next .mini-zoom,
+        .mini-seminar.is-next .mini-zoom-soon {
+            display: inline-flex;
+        }
+
+        .mini-seminar.is-next .mini-hybrid { display: inline; }
+        .mini-seminar.is-next .mini-zoom-soon { display: inline; }
+
         .mini-ozet-btn {
             background: none;
             border: 1px solid rgba(201,169,98,0.25);
@@ -2934,6 +2950,20 @@
                 }
             }, 600); // scroll bitmesini bekle
         }
+
+        // Mini-schedule'da sıradaki seminere is-next sınıfı ata
+        (function markNextMiniSeminar() {
+            const now = new Date();
+            const miniRows = document.querySelectorAll('.mini-seminar[data-date]');
+            let marked = false;
+            miniRows.forEach(row => {
+                const d = new Date(row.dataset.date + 'T15:30:00');
+                if (!marked && d > now) {
+                    row.classList.add('is-next');
+                    marked = true;
+                }
+            });
+        })();
     </script>
 </body>
 
