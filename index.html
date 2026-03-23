@@ -1606,7 +1606,104 @@
             }
         }
 
+        /* ── Özet Accordion ── */
+        .seminar-abstract {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            grid-column: 1 / -1;
+        }
+
+        .seminar-abstract.open {
+            max-height: 400px;
+        }
+
+        .seminar-abstract-inner {
+            padding: 1rem 0 0.5rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            margin-top: 0.5rem;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .seminar-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-top: 0.6rem;
+        }
+
+        .btn-abstract {
+            background: none;
+            border: 1px solid rgba(201,169,98,0.3);
+            color: var(--gold);
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.3rem 0.9rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .btn-abstract:hover {
+            background: rgba(201,169,98,0.1);
+            border-color: var(--gold);
+        }
+
+        .btn-abstract i {
+            transition: transform 0.3s;
+            font-size: 0.65rem;
+        }
+
+        .btn-abstract.open i { transform: rotate(180deg); }
+
+        /* Hibrit rozeti ve Zoom linki */
+        .hybrid-info {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .badge-hybrid {
+            background: rgba(56,189,248,0.12);
+            color: #38bdf8;
+            border: 1px solid rgba(56,189,248,0.25);
+            font-size: 0.68rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 0.2rem 0.7rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .zoom-link {
+            font-size: 0.75rem;
+            color: #38bdf8;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            opacity: 0.85;
+            transition: opacity 0.2s;
+        }
+
+        .zoom-link:hover { opacity: 1; }
+
+        .zoom-capacity {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            opacity: 0.7;
+        }
+
         /* Scroll Reveal Animations */
+
         .reveal {
             opacity: 0;
             transform: translateY(50px);
@@ -2256,8 +2353,25 @@
                     <div class="seminar-info">
                         <div class="seminar-speakers">Ario Ceccotti</div>
                         <div class="seminar-title-text">The tree has grown</div>
+                        <div class="seminar-actions">
+                            <button class="btn-abstract" onclick="toggleAbstract(this)">
+                                <i class="fas fa-chevron-down"></i> Özet
+                            </button>
+                            <div class="hybrid-info">
+                                <span class="badge-hybrid">🖥 Hibrit</span>
+                                <a href="ZOOM_LINK_1" target="_blank" class="zoom-link">
+                                    <i class="fas fa-video"></i> Zoom ile Katıl
+                                </a>
+                                <span class="zoom-capacity">(max. 100 kişi)</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="seminar-badge upcoming">Yaklaşıyor</div>
+                    <div class="seminar-abstract">
+                        <div class="seminar-abstract-inner">
+                            Özet metni eklenecek.
+                        </div>
+                    </div>
                 </div>
 
                 <div class="seminar-card reveal" data-date="2026-04-15">
@@ -2269,10 +2383,23 @@
                     </div>
                     <div class="seminar-info">
                         <div class="seminar-speakers">Bahar Ayhan, Erol Lale, Gianluca Cusatis</div>
-                        <div class="seminar-title-text">Taze Betonun Ayrık Elemanlar Yöntemiyle Sayısal Modellenmesi
+                        <div class="seminar-title-text">Taze Betonun Ayrık Elemanlar Yöntemiyle Sayısal Modellenmesi</div>
+                        <div class="seminar-actions">
+                            <button class="btn-abstract" onclick="toggleAbstract(this)">
+                                <i class="fas fa-chevron-down"></i> Özet
+                            </button>
+                            <div class="hybrid-info">
+                                <span class="badge-hybrid">🖥 Hibrit</span>
+                                <span class="zoom-capacity">Zoom linki yakında</span>
+                            </div>
                         </div>
                     </div>
                     <div class="seminar-badge upcoming">Yaklaşıyor</div>
+                    <div class="seminar-abstract">
+                        <div class="seminar-abstract-inner">
+                            Özet metni eklenecek.
+                        </div>
+                    </div>
                 </div>
 
                 <div class="seminar-card reveal" data-date="2026-04-22">
@@ -2284,10 +2411,23 @@
                     </div>
                     <div class="seminar-info">
                         <div class="seminar-speakers">Emre Gönülcü</div>
-                        <div class="seminar-title-text">Bina tipi taşıyıcı sistemlerde bir yapı sağlığı izleme yöntemi
-                            önerisi: basitleştirilmiş sayısal model ve hasar tespit algoritması</div>
+                        <div class="seminar-title-text">Bina tipi taşıyıcı sistemlerde bir yapı sağlığı izleme yöntemi önerisi: basitleştirilmiş sayısal model ve hasar tespit algoritması</div>
+                        <div class="seminar-actions">
+                            <button class="btn-abstract" onclick="toggleAbstract(this)">
+                                <i class="fas fa-chevron-down"></i> Özet
+                            </button>
+                            <div class="hybrid-info">
+                                <span class="badge-hybrid">🖥 Hibrit</span>
+                                <span class="zoom-capacity">Zoom linki yakında</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="seminar-badge upcoming">Yaklaşıyor</div>
+                    <div class="seminar-abstract">
+                        <div class="seminar-abstract-inner">
+                            Özet metni eklenecek.
+                        </div>
+                    </div>
                 </div>
 
                 <div class="seminar-card reveal" data-date="2026-05-06">
@@ -2299,10 +2439,23 @@
                     </div>
                     <div class="seminar-info">
                         <div class="seminar-speakers">Murat Çelik, Erol Demirkan, Ahmet Feyzi Yıldırım</div>
-                        <div class="seminar-title-text">Kayma deformasyonuna uğrayabilen fonksiyonel dereceli malzeme
-                            kirişlerde titreşim bileşenlerinin analitik ve sayısal incelenmesi</div>
+                        <div class="seminar-title-text">Kayma deformasyonuna uğrayabilen fonksiyonel dereceli malzeme kirişlerde titreşim bileşenlerinin analitik ve sayısal incelenmesi</div>
+                        <div class="seminar-actions">
+                            <button class="btn-abstract" onclick="toggleAbstract(this)">
+                                <i class="fas fa-chevron-down"></i> Özet
+                            </button>
+                            <div class="hybrid-info">
+                                <span class="badge-hybrid">🖥 Hibrit</span>
+                                <span class="zoom-capacity">Zoom linki yakında</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="seminar-badge upcoming">Yaklaşıyor</div>
+                    <div class="seminar-abstract">
+                        <div class="seminar-abstract-inner">
+                            Özet metni eklenecek.
+                        </div>
+                    </div>
                 </div>
 
                 <div class="seminar-card reveal" data-date="2026-05-13">
@@ -2314,10 +2467,23 @@
                     </div>
                     <div class="seminar-info">
                         <div class="seminar-speakers">Özgür Kırca</div>
-                        <div class="seminar-title-text">Deniz Yapıları Etrafında Dalga Kaynaklı Sıvılaşma Mekaniğinin
-                            Modellenmesi: Güncel Yaklaşımlar ve Büyük Ölçekli Deneyler</div>
+                        <div class="seminar-title-text">Deniz Yapıları Etrafında Dalga Kaynaklı Sıvılaşma Mekaniğinin Modellenmesi: Güncel Yaklaşımlar ve Büyük Ölçekli Deneyler</div>
+                        <div class="seminar-actions">
+                            <button class="btn-abstract" onclick="toggleAbstract(this)">
+                                <i class="fas fa-chevron-down"></i> Özet
+                            </button>
+                            <div class="hybrid-info">
+                                <span class="badge-hybrid">🖥 Hibrit</span>
+                                <span class="zoom-capacity">Zoom linki yakında</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="seminar-badge upcoming">Yaklaşıyor</div>
+                    <div class="seminar-abstract">
+                        <div class="seminar-abstract-inner">
+                            Özet metni eklenecek.
+                        </div>
+                    </div>
                 </div>
 
                 <div class="seminar-card reveal" data-date="2026-05-20">
@@ -2329,10 +2495,23 @@
                     </div>
                     <div class="seminar-info">
                         <div class="seminar-speakers">Osman Bulut, Ömer Canbey Cücemen</div>
-                        <div class="seminar-title-text">Kompozit/Hibrit Bileşenlerde Termal Yükleme Altında Gerilme
-                            Yığılmaları: Deneysel Fotoelastisite ve Sonlu Eleman Karşılaştırması</div>
+                        <div class="seminar-title-text">Kompozit/Hibrit Bileşenlerde Termal Yükleme Altında Gerilme Yığılmaları: Deneysel Fotoelastisite ve Sonlu Eleman Karşılaştırması</div>
+                        <div class="seminar-actions">
+                            <button class="btn-abstract" onclick="toggleAbstract(this)">
+                                <i class="fas fa-chevron-down"></i> Özet
+                            </button>
+                            <div class="hybrid-info">
+                                <span class="badge-hybrid">🖥 Hibrit</span>
+                                <span class="zoom-capacity">Zoom linki yakında</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="seminar-badge upcoming">Yaklaşıyor</div>
+                    <div class="seminar-abstract">
+                        <div class="seminar-abstract-inner">
+                            Özet metni eklenecek.
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -2638,6 +2817,16 @@
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => toggleMenu(false));
         });
+
+        // Özet Accordion
+        function toggleAbstract(btn) {
+            const card = btn.closest('.seminar-card');
+            const abstract = card.querySelector('.seminar-abstract');
+            const isOpen = abstract.classList.contains('open');
+            abstract.classList.toggle('open', !isOpen);
+            btn.classList.toggle('open', !isOpen);
+            btn.querySelector('i').style.transform = isOpen ? '' : 'rotate(180deg)';
+        }
     </script>
 </body>
 
