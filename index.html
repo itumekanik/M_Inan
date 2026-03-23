@@ -1702,6 +1702,65 @@
             opacity: 0.7;
         }
 
+        /* ── Mini-schedule aksiyon satırı ── */
+        .mini-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 0.3rem;
+        }
+
+        .mini-hybrid {
+            font-size: 0.62rem;
+            background: rgba(56,189,248,0.1);
+            color: #38bdf8;
+            border: 1px solid rgba(56,189,248,0.2);
+            border-radius: 50px;
+            padding: 0.1rem 0.5rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .mini-zoom {
+            font-size: 0.62rem;
+            color: #38bdf8;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            opacity: 0.85;
+            transition: opacity 0.2s;
+        }
+
+        .mini-zoom:hover { opacity: 1; }
+
+        .mini-zoom-soon {
+            font-size: 0.6rem;
+            color: var(--text-muted);
+            opacity: 0.6;
+        }
+
+        .mini-ozet-btn {
+            background: none;
+            border: 1px solid rgba(201,169,98,0.25);
+            color: var(--gold);
+            font-size: 0.6rem;
+            padding: 0.1rem 0.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: all 0.25s;
+            letter-spacing: 0.05em;
+        }
+
+        .mini-ozet-btn:hover {
+            background: rgba(201,169,98,0.1);
+            border-color: var(--gold);
+        }
+
         /* Scroll Reveal Animations */
 
         .reveal {
@@ -2122,7 +2181,7 @@
                     <div class="mini-schedule-label">Seminer Programı</div>
                     <div class="mini-schedule">
 
-                        <div class="mini-seminar" data-date="2026-04-08">
+                        <div class="mini-seminar" data-date="2026-04-08" data-index="0">
                             <div class="mini-date">
                                 <span class="mini-day">08</span>
                                 <span class="mini-month">Nis</span>
@@ -2130,24 +2189,33 @@
                             <div class="mini-info">
                                 <div class="mini-speaker">Ario Ceccotti</div>
                                 <div class="mini-title">The tree has grown</div>
+                                <div class="mini-actions">
+                                    <span class="mini-hybrid">🖥 Hibrit</span>
+                                    <a href="https://zoom.us/j/97570347412?pwd=tpstOKgHFwBuabzu3ilZahc4V1aEQd.1" target="_blank" class="mini-zoom"><i class="fas fa-video"></i> Zoom</a>
+                                    <button class="mini-ozet-btn" onclick="openAbstractFromMini(0)"><i class="fas fa-align-left"></i> Özet</button>
+                                </div>
                             </div>
                             <div class="mini-badge upcoming">●</div>
                         </div>
 
-                        <div class="mini-seminar" data-date="2026-04-15">
+                        <div class="mini-seminar" data-date="2026-04-15" data-index="1">
                             <div class="mini-date">
                                 <span class="mini-day">15</span>
                                 <span class="mini-month">Nis</span>
                             </div>
                             <div class="mini-info">
                                 <div class="mini-speaker">Bahar Ayhan, Erol Lale, G. Cusatis</div>
-                                <div class="mini-title">Taze Betonun Ayrık Elemanlar Yöntemiyle Sayısal Modellenmesi
+                                <div class="mini-title">Taze Betonun Sayısal Modellenmesi</div>
+                                <div class="mini-actions">
+                                    <span class="mini-hybrid">🖥 Hibrit</span>
+                                    <span class="mini-zoom-soon">Zoom yakında</span>
+                                    <button class="mini-ozet-btn" onclick="openAbstractFromMini(1)"><i class="fas fa-align-left"></i> Özet</button>
                                 </div>
                             </div>
                             <div class="mini-badge upcoming">●</div>
                         </div>
 
-                        <div class="mini-seminar" data-date="2026-04-22">
+                        <div class="mini-seminar" data-date="2026-04-22" data-index="2">
                             <div class="mini-date">
                                 <span class="mini-day">22</span>
                                 <span class="mini-month">Nis</span>
@@ -2155,11 +2223,16 @@
                             <div class="mini-info">
                                 <div class="mini-speaker">Emre Gönülcü</div>
                                 <div class="mini-title">Yapı Sağlığı İzleme Yöntemi Önerisi</div>
+                                <div class="mini-actions">
+                                    <span class="mini-hybrid">🖥 Hibrit</span>
+                                    <span class="mini-zoom-soon">Zoom yakında</span>
+                                    <button class="mini-ozet-btn" onclick="openAbstractFromMini(2)"><i class="fas fa-align-left"></i> Özet</button>
+                                </div>
                             </div>
                             <div class="mini-badge upcoming">●</div>
                         </div>
 
-                        <div class="mini-seminar" data-date="2026-05-06">
+                        <div class="mini-seminar" data-date="2026-05-06" data-index="3">
                             <div class="mini-date">
                                 <span class="mini-day">06</span>
                                 <span class="mini-month">May</span>
@@ -2167,11 +2240,16 @@
                             <div class="mini-info">
                                 <div class="mini-speaker">M. Çelik, E. Demirkan, A. F. Yıldırım</div>
                                 <div class="mini-title">Fonksiyonel Dereceli Malzeme Kirişlerde Titreşim</div>
+                                <div class="mini-actions">
+                                    <span class="mini-hybrid">🖥 Hibrit</span>
+                                    <span class="mini-zoom-soon">Zoom yakında</span>
+                                    <button class="mini-ozet-btn" onclick="openAbstractFromMini(3)"><i class="fas fa-align-left"></i> Özet</button>
+                                </div>
                             </div>
                             <div class="mini-badge upcoming">●</div>
                         </div>
 
-                        <div class="mini-seminar" data-date="2026-05-13">
+                        <div class="mini-seminar" data-date="2026-05-13" data-index="4">
                             <div class="mini-date">
                                 <span class="mini-day">13</span>
                                 <span class="mini-month">May</span>
@@ -2179,11 +2257,16 @@
                             <div class="mini-info">
                                 <div class="mini-speaker">Özgür Kırca</div>
                                 <div class="mini-title">Deniz Yapıları Etrafında Sıvılaşma Mekaniği</div>
+                                <div class="mini-actions">
+                                    <span class="mini-hybrid">🖥 Hibrit</span>
+                                    <span class="mini-zoom-soon">Zoom yakında</span>
+                                    <button class="mini-ozet-btn" onclick="openAbstractFromMini(4)"><i class="fas fa-align-left"></i> Özet</button>
+                                </div>
                             </div>
                             <div class="mini-badge upcoming">●</div>
                         </div>
 
-                        <div class="mini-seminar" data-date="2026-05-20">
+                        <div class="mini-seminar" data-date="2026-05-20" data-index="5">
                             <div class="mini-date">
                                 <span class="mini-day">20</span>
                                 <span class="mini-month">May</span>
@@ -2191,6 +2274,11 @@
                             <div class="mini-info">
                                 <div class="mini-speaker">Osman Bulut, Ö. C. Cücemen</div>
                                 <div class="mini-title">Termal Yükleme Altında Gerilme Yığılmaları</div>
+                                <div class="mini-actions">
+                                    <span class="mini-hybrid">🖥 Hibrit</span>
+                                    <span class="mini-zoom-soon">Zoom yakında</span>
+                                    <button class="mini-ozet-btn" onclick="openAbstractFromMini(5)"><i class="fas fa-align-left"></i> Özet</button>
+                                </div>
                             </div>
                             <div class="mini-badge upcoming">●</div>
                         </div>
@@ -2359,7 +2447,7 @@
                             </button>
                             <div class="hybrid-info">
                                 <span class="badge-hybrid">🖥 Hibrit</span>
-                                <a href="ZOOM_LINK_1" target="_blank" class="zoom-link">
+                                <a href="https://zoom.us/j/97570347412?pwd=tpstOKgHFwBuabzu3ilZahc4V1aEQd.1" target="_blank" class="zoom-link">
                                     <i class="fas fa-video"></i> Zoom ile Katıl
                                 </a>
                                 <span class="zoom-capacity">(max. 100 kişi)</span>
@@ -2826,6 +2914,25 @@
             abstract.classList.toggle('open', !isOpen);
             btn.classList.toggle('open', !isOpen);
             btn.querySelector('i').style.transform = isOpen ? '' : 'rotate(180deg)';
+        }
+
+        // Mini programdan Özet'e tıklayınca program kartına scroll et ve abstract'ı aç
+        function openAbstractFromMini(index) {
+            const cards = document.querySelectorAll('.seminar-card');
+            const card = cards[index];
+            if (!card) return;
+            card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            setTimeout(() => {
+                const abstract = card.querySelector('.seminar-abstract');
+                const btn = card.querySelector('.btn-abstract');
+                if (abstract && !abstract.classList.contains('open')) {
+                    abstract.classList.add('open');
+                    if (btn) {
+                        btn.classList.add('open');
+                        btn.querySelector('i').style.transform = 'rotate(180deg)';
+                    }
+                }
+            }, 600); // scroll bitmesini bekle
         }
     </script>
 </body>
