@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>79. Yıl Mustafa İnan Seminerleri | İTÜ İnşaat Mühendisliği</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
@@ -68,8 +71,17 @@
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 0.4; transform: scale(0.98); }
-            50% { opacity: 1; transform: scale(1); }
+
+            0%,
+            100% {
+                opacity: 0.4;
+                transform: scale(0.98);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         /* Custom Cursor */
@@ -215,10 +227,10 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, 
-                rgba(10, 10, 15, 0.97) 0%, 
-                rgba(18, 18, 26, 0.92) 50%,
-                rgba(10, 10, 15, 0.98) 100%);
+            background: linear-gradient(135deg,
+                    rgba(10, 10, 15, 0.97) 0%,
+                    rgba(18, 18, 26, 0.92) 50%,
+                    rgba(10, 10, 15, 0.98) 100%);
             z-index: 1;
         }
 
@@ -235,7 +247,7 @@
             inset: 0;
             z-index: -1;
             opacity: 0.03;
-            background-image: 
+            background-image:
                 linear-gradient(var(--gold) 1px, transparent 1px),
                 linear-gradient(90deg, var(--gold) 1px, transparent 1px);
             background-size: 100px 100px;
@@ -283,6 +295,7 @@
                 opacity: 0;
                 transform: translateY(40px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -388,13 +401,14 @@
         .next-seminar-countdown {
             margin-bottom: 2rem;
             padding: 1.1rem 1.5rem;
-            background: rgba(201,169,98,0.05);
-            border: 1px solid rgba(201,169,98,0.18);
+            background: rgba(201, 169, 98, 0.05);
+            border: 1px solid rgba(201, 169, 98, 0.18);
             border-radius: 12px;
             display: inline-flex;
             flex-direction: column;
             gap: 0.5rem;
         }
+
         .countdown-label {
             font-size: 0.72rem;
             color: var(--gold);
@@ -404,6 +418,7 @@
             align-items: center;
             gap: 0.5rem;
         }
+
         .countdown-dot {
             width: 7px;
             height: 7px;
@@ -412,17 +427,20 @@
             animation: blink 1.2s ease-in-out infinite;
             flex-shrink: 0;
         }
+
         .countdown-units {
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
+
         .countdown-unit {
             display: flex;
             flex-direction: column;
             align-items: center;
             min-width: 44px;
         }
+
         .cu-value {
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
@@ -430,6 +448,7 @@
             color: var(--text-primary);
             line-height: 1;
         }
+
         .cu-label {
             font-size: 0.6rem;
             color: var(--text-muted);
@@ -437,6 +456,7 @@
             text-transform: uppercase;
             margin-top: 0.15rem;
         }
+
         .countdown-sep {
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
@@ -444,6 +464,7 @@
             opacity: 0.5;
             margin-bottom: 0.8rem;
         }
+
         .countdown-seminar-info {
             font-size: 0.72rem;
             color: var(--text-muted);
@@ -558,8 +579,15 @@
         }
 
         @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
         }
 
         .countdown {
@@ -677,7 +705,7 @@
         }
 
         .mini-schedule::-webkit-scrollbar-thumb {
-            background: rgba(201,169,98,0.25);
+            background: rgba(201, 169, 98, 0.25);
             border-radius: 2px;
         }
 
@@ -687,7 +715,7 @@
             align-items: center;
             gap: 0.6rem;
             padding: 0.4rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
             transition: background 0.25s;
         }
 
@@ -696,7 +724,7 @@
         }
 
         .mini-seminar.active-mini {
-            background: rgba(201,169,98,0.06);
+            background: rgba(201, 169, 98, 0.06);
             border-radius: 8px;
             padding: 0.65rem 0.5rem;
             margin: 0 -0.5rem;
@@ -706,7 +734,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background: rgba(201,169,98,0.08);
+            background: rgba(201, 169, 98, 0.08);
             border-radius: 8px;
             padding: 0.2rem 0.25rem;
             line-height: 1.1;
@@ -758,12 +786,19 @@
             text-align: right;
         }
 
-        .mini-badge.upcoming { color: rgba(201,169,98,0.35); }
-        .mini-badge.past { color: rgba(255,255,255,0.15); }
+        .mini-badge.upcoming {
+            color: rgba(201, 169, 98, 0.35);
+        }
+
+        .mini-badge.past {
+            color: rgba(255, 255, 255, 0.15);
+        }
+
         .mini-badge.today {
             color: var(--gold);
             animation: blink 1s ease-in-out infinite;
         }
+
         .mini-badge.next-up {
             color: var(--gold);
             font-size: 0.75rem;
@@ -773,30 +808,35 @@
         .mini-seminar.past-mini {
             opacity: 0.35;
         }
+
         .mini-seminar.past-mini .mini-speaker,
         .mini-seminar.past-mini .mini-title {
             text-decoration: line-through;
-            text-decoration-color: rgba(255,255,255,0.15);
+            text-decoration-color: rgba(255, 255, 255, 0.15);
         }
+
         .mini-seminar.past-mini .mini-date {
-            background: rgba(255,255,255,0.03);
+            background: rgba(255, 255, 255, 0.03);
         }
+
         .mini-seminar.past-mini .mini-day {
             color: var(--text-muted);
         }
 
         /* Mini: sıradaki seminer - öne çıkan */
         .mini-seminar.next-up-mini {
-            background: rgba(201,169,98,0.09);
+            background: rgba(201, 169, 98, 0.09);
             border-radius: 10px;
             padding: 0.4rem 0.6rem;
             margin: 0.15rem -0.6rem;
-            border: 1px solid rgba(201,169,98,0.25);
-            box-shadow: 0 0 18px rgba(201,169,98,0.08);
+            border: 1px solid rgba(201, 169, 98, 0.25);
+            box-shadow: 0 0 18px rgba(201, 169, 98, 0.08);
         }
+
         .mini-seminar.next-up-mini .mini-day {
             font-size: 1.1rem;
         }
+
         .mini-seminar.next-up-mini .mini-title {
             color: var(--text-primary);
             font-weight: 500;
@@ -834,8 +874,15 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-30px) rotate(180deg); }
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-30px) rotate(180deg);
+            }
         }
 
         /* About Section */
@@ -979,8 +1026,13 @@
             background: linear-gradient(90deg, transparent, rgba(201, 169, 98, 0.2), transparent);
         }
 
-        .details::before { top: 0; }
-        .details::after { bottom: 0; }
+        .details::before {
+            top: 0;
+        }
+
+        .details::after {
+            bottom: 0;
+        }
 
         .details-container {
             max-width: 1400px;
@@ -1076,10 +1128,10 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, 
-                rgba(10, 10, 15, 0.95) 0%, 
-                rgba(30, 58, 95, 0.3) 50%,
-                rgba(10, 10, 15, 0.95) 100%);
+            background: linear-gradient(135deg,
+                    rgba(10, 10, 15, 0.95) 0%,
+                    rgba(30, 58, 95, 0.3) 50%,
+                    rgba(10, 10, 15, 0.95) 100%);
         }
 
         .cta-bg img {
@@ -1278,7 +1330,7 @@
             margin-top: 1.5rem;
             padding: 0.75rem 1.8rem;
             background: transparent;
-            border: 1px solid rgba(201,169,98,0.35);
+            border: 1px solid rgba(201, 169, 98, 0.35);
             border-radius: 50px;
             color: var(--gold);
             font-size: 0.82rem;
@@ -1294,9 +1346,9 @@
         }
 
         .btn-download-program:hover {
-            background: rgba(201,169,98,0.12);
+            background: rgba(201, 169, 98, 0.12);
             border-color: var(--gold);
-            box-shadow: 0 0 20px rgba(201,169,98,0.15);
+            box-shadow: 0 0 20px rgba(201, 169, 98, 0.15);
             transform: translateY(-2px);
         }
 
@@ -1311,8 +1363,8 @@
             grid-template-columns: 50px 110px 1fr auto;
             align-items: center;
             gap: 2rem;
-            background: linear-gradient(145deg, rgba(26,26,37,0.7), rgba(18,18,26,0.9));
-            border: 1px solid rgba(255,255,255,0.04);
+            background: linear-gradient(145deg, rgba(26, 26, 37, 0.7), rgba(18, 18, 26, 0.9));
+            border: 1px solid rgba(255, 255, 255, 0.04);
             border-radius: 16px;
             padding: 1.8rem 2.5rem;
             transition: all 0.45s ease;
@@ -1333,8 +1385,8 @@
         }
 
         .seminar-card:hover {
-            border-color: rgba(201,169,98,0.25);
-            background: linear-gradient(145deg, rgba(30,30,44,0.85), rgba(22,22,33,0.95));
+            border-color: rgba(201, 169, 98, 0.25);
+            background: linear-gradient(145deg, rgba(30, 30, 44, 0.85), rgba(22, 22, 33, 0.95));
             transform: translateX(6px);
         }
 
@@ -1343,8 +1395,8 @@
         }
 
         .seminar-card.active-seminar {
-            border-color: rgba(201,169,98,0.4);
-            background: linear-gradient(145deg, rgba(201,169,98,0.07), rgba(18,18,26,0.9));
+            border-color: rgba(201, 169, 98, 0.4);
+            background: linear-gradient(145deg, rgba(201, 169, 98, 0.07), rgba(18, 18, 26, 0.9));
         }
 
         .seminar-card.active-seminar::before {
@@ -1354,7 +1406,7 @@
         .seminar-index {
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
-            color: rgba(201,169,98,0.25);
+            color: rgba(201, 169, 98, 0.25);
             font-weight: 700;
             text-align: center;
         }
@@ -1363,8 +1415,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background: rgba(201,169,98,0.06);
-            border: 1px solid rgba(201,169,98,0.12);
+            background: rgba(201, 169, 98, 0.06);
+            border: 1px solid rgba(201, 169, 98, 0.12);
             border-radius: 12px;
             padding: 0.8rem 1.2rem;
             text-align: center;
@@ -1425,23 +1477,23 @@
         }
 
         .seminar-badge.upcoming {
-            background: rgba(201,169,98,0.06);
-            color: rgba(201,169,98,0.5);
-            border: 1px solid rgba(201,169,98,0.12);
+            background: rgba(201, 169, 98, 0.06);
+            color: rgba(201, 169, 98, 0.5);
+            border: 1px solid rgba(201, 169, 98, 0.12);
         }
 
         .seminar-badge.next-up {
             background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
             color: var(--bg-primary);
             border: none;
-            box-shadow: 0 4px 20px rgba(201,169,98,0.35);
+            box-shadow: 0 4px 20px rgba(201, 169, 98, 0.35);
             animation: pulse-badge 2.5s ease-in-out infinite;
         }
 
         .seminar-badge.past {
             background: transparent;
-            color: rgba(255,255,255,0.2);
-            border: 1px solid rgba(255,255,255,0.06);
+            color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         .seminar-badge.today {
@@ -1451,28 +1503,42 @@
         }
 
         @keyframes pulse-badge {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(201,169,98,0.5); }
-            50% { box-shadow: 0 0 0 8px rgba(201,169,98,0); }
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(201, 169, 98, 0.5);
+            }
+
+            50% {
+                box-shadow: 0 0 0 8px rgba(201, 169, 98, 0);
+            }
         }
 
         /* Sıradaki seminer - öne çıkan */
         .seminar-card.next-up-card {
-            border-color: rgba(201,169,98,0.45);
-            background: linear-gradient(145deg, rgba(201,169,98,0.1), rgba(18,18,26,0.95));
-            box-shadow: 0 0 40px rgba(201,169,98,0.12), inset 0 0 0 1px rgba(201,169,98,0.2);
+            border-color: rgba(201, 169, 98, 0.45);
+            background: linear-gradient(145deg, rgba(201, 169, 98, 0.1), rgba(18, 18, 26, 0.95));
+            box-shadow: 0 0 40px rgba(201, 169, 98, 0.12), inset 0 0 0 1px rgba(201, 169, 98, 0.2);
         }
-        .seminar-card.next-up-card::before { opacity: 1; }
+
+        .seminar-card.next-up-card::before {
+            opacity: 1;
+        }
+
         .seminar-card.next-up-card .seminar-index {
-            color: rgba(201,169,98,0.6);
+            color: rgba(201, 169, 98, 0.6);
             font-size: 1.8rem;
         }
+
         .seminar-card.next-up-card .seminar-day {
             font-size: 2.4rem;
         }
+
         .seminar-card.next-up-card .seminar-date-block {
-            background: rgba(201,169,98,0.15);
-            border-color: rgba(201,169,98,0.35);
+            background: rgba(201, 169, 98, 0.15);
+            border-color: rgba(201, 169, 98, 0.35);
         }
+
         .seminar-card.next-up-card .seminar-title-text {
             font-size: 1.05rem;
             font-weight: 500;
@@ -1483,25 +1549,34 @@
             opacity: 0.38;
             filter: grayscale(40%);
         }
+
         .seminar-card.past-card .seminar-title-text {
             text-decoration: line-through;
-            text-decoration-color: rgba(255,255,255,0.2);
+            text-decoration-color: rgba(255, 255, 255, 0.2);
         }
-        .seminar-card.past-card .seminar-day { color: var(--text-muted); }
+
+        .seminar-card.past-card .seminar-day {
+            color: var(--text-muted);
+        }
+
         .seminar-card.past-card .seminar-date-block {
-            background: rgba(255,255,255,0.02);
-            border-color: rgba(255,255,255,0.04);
+            background: rgba(255, 255, 255, 0.02);
+            border-color: rgba(255, 255, 255, 0.04);
         }
 
         /* Gelecekteki seminerlere mat görünüm */
         .seminar-card.future-card {
             opacity: 0.65;
         }
+
         .seminar-card.future-card .seminar-date-block {
-            background: rgba(201,169,98,0.03);
-            border-color: rgba(201,169,98,0.07);
+            background: rgba(201, 169, 98, 0.03);
+            border-color: rgba(201, 169, 98, 0.07);
         }
-        .seminar-card.future-card .seminar-day { color: rgba(201,169,98,0.55); }
+
+        .seminar-card.future-card .seminar-day {
+            color: rgba(201, 169, 98, 0.55);
+        }
 
         @media (max-width: 768px) {
             .seminar-card {
@@ -1509,15 +1584,18 @@
                 gap: 1rem;
                 padding: 1.5rem;
             }
+
             .seminar-index {
                 display: none;
             }
+
             .seminar-date-block {
                 flex-direction: row;
                 gap: 0.5rem;
                 align-items: baseline;
                 width: fit-content;
             }
+
             .seminar-badge {
                 width: fit-content;
             }
@@ -1535,11 +1613,12 @@
             transform: translateY(0);
         }
 
-        /* Responsive */
+        /* ── Responsive: Tablet 1024px ── */
         @media (max-width: 1024px) {
             .hero-content {
                 grid-template-columns: 1fr;
                 text-align: center;
+                padding: 100px 6% 3rem;
             }
 
             .hero-subtitle {
@@ -1548,19 +1627,36 @@
 
             .hero-meta {
                 justify-content: center;
+                flex-wrap: wrap;
             }
 
             .hero-buttons {
                 justify-content: center;
             }
 
+            .next-seminar-countdown {
+                align-self: center;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .hero-visual {
+                display: flex;
+                justify-content: center;
+            }
+
+            .hero-card {
+                max-width: 540px;
+                width: 100%;
+            }
+
             .about-container {
                 grid-template-columns: 1fr;
-                gap: 4rem;
+                gap: 3rem;
             }
 
             .details-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
             }
 
             .nav-links {
@@ -1568,26 +1664,99 @@
             }
         }
 
+        /* ── Responsive: Mobil 768px ── */
         @media (max-width: 768px) {
             nav {
                 padding: 1rem 5%;
             }
 
-            .hero-card {
-                padding: 2rem;
+            .hero-content {
+                padding: 90px 5% 3rem;
             }
 
-            .countdown-value {
-                font-size: 2rem;
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+            .hero-title .year {
+                font-size: 0.9rem;
+                letter-spacing: 0.12em;
+            }
+
+            .hero-meta {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.8rem;
+            }
+
+            .hero-card {
+                max-width: 100%;
+                padding: 1.8rem;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image-main {
+                max-height: 300px;
+                object-fit: cover;
+                border-radius: 12px;
             }
 
             .about-stats {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
                 gap: 1.5rem;
+            }
+
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .program {
+                padding: 5rem 5%;
+            }
+
+            .program-header {
+                margin-bottom: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .seminar-card {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+                padding: 1.4rem;
+            }
+
+            .seminar-index {
+                display: none;
+            }
+
+            .seminar-date-block {
+                flex-direction: row;
+                gap: 0.5rem;
+                align-items: baseline;
+                width: fit-content;
+            }
+
+            .seminar-badge {
+                width: fit-content;
+            }
+
+            .countdown-units {
+                gap: 0.4rem;
+            }
+
+            .cu-value {
+                font-size: 1.4rem;
             }
 
             .footer-top {
                 flex-direction: column;
+                gap: 2rem;
             }
 
             .footer-links {
@@ -1601,12 +1770,82 @@
                 text-align: center;
             }
 
-            .cursor, .cursor-follower {
+            .cursor,
+            .cursor-follower {
                 display: none;
+            }
+        }
+
+        /* ── Responsive: Küçük Telefon 480px ── */
+        @media (max-width: 480px) {
+            .hero-content {
+                padding: 85px 4% 2.5rem;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .hero-buttons a {
+                text-align: center;
+                justify-content: center;
+            }
+
+            .hero-card {
+                padding: 1.3rem;
+            }
+
+            .mini-seminar {
+                grid-template-columns: 34px 1fr 12px;
+                gap: 0.4rem;
+            }
+
+            .mini-day {
+                font-size: 0.95rem;
+            }
+
+            .countdown-units {
+                gap: 0.25rem;
+            }
+
+            .cu-value {
+                font-size: 1.15rem;
+                min-width: 36px;
+            }
+
+            .countdown-sep {
+                font-size: 1.1rem;
+            }
+
+            .btn-download-program {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stat-value {
+                font-size: 2.3rem;
+            }
+
+            .section-title {
+                font-size: 1.7rem;
+            }
+
+            .cta-container h2 {
+                font-size: 1.8rem;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Preloader -->
     <div class="preloader" id="preloader">
@@ -1637,7 +1876,8 @@
     <!-- Hero Section -->
     <section class="hero" id="hero">
         <div class="hero-bg">
-            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=2000" alt="University">
+            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=2000"
+                alt="University">
         </div>
         <div class="hero-pattern"></div>
         <div class="hero-glow hero-glow-1"></div>
@@ -1654,7 +1894,7 @@
                     Seminerleri
                 </h1>
                 <p class="hero-subtitle">
-                    İTÜ İnşaat Mühendisliği Bölümü'nün prestijli seminer serisi, 
+                    İTÜ İnşaat Mühendisliği Bölümü'nün prestijli seminer serisi,
                     akademik mükemmelliği ve mühendislik vizyonunu bir araya getiriyor.
                 </p>
                 <div class="hero-meta">
@@ -1718,7 +1958,8 @@
                             </div>
                             <div class="mini-info">
                                 <div class="mini-speaker">Bahar Ayhan, Erol Lale, G. Cusatis</div>
-                                <div class="mini-title">Taze Betonun Ayrık Elemanlar Yöntemiyle Sayısal Modellenmesi</div>
+                                <div class="mini-title">Taze Betonun Ayrık Elemanlar Yöntemiyle Sayısal Modellenmesi
+                                </div>
                             </div>
                             <div class="mini-badge upcoming">●</div>
                         </div>
@@ -1773,7 +2014,8 @@
 
                     </div>
                     <!-- Sıradaki Seminere Geri Sayım -->
-                    <div class="next-seminar-countdown" id="nextSeminarCountdown" style="margin: 0.75rem 0 0; padding: 0.8rem 1rem; border-radius: 10px; width: 100%; box-sizing: border-box;">
+                    <div class="next-seminar-countdown" id="nextSeminarCountdown"
+                        style="margin: 0.75rem 0 0; padding: 0.8rem 1rem; border-radius: 10px; width: 100%; box-sizing: border-box;">
                         <div class="countdown-label">
                             <span class="countdown-dot"></span>
                             Sıradaki Seminere
@@ -1830,14 +2072,14 @@
                     <span style="color: var(--gold)">Köklü Bir Gelenek</span>
                 </h2>
                 <p>
-                    Mustafa İnan Seminerleri, İstanbul Teknik Üniversitesi İnşaat Mühendisliği Bölümü'nün 
-                    79 yıllık akademik geleneğinin en prestijli etkinliklerinden biridir. Bu seminerler, 
-                    mühendislik alanındaki en güncel araştırmaları ve yenilikçi yaklaşımları akademik 
+                    Mustafa İnan Seminerleri, İstanbul Teknik Üniversitesi İnşaat Mühendisliği Bölümü'nün
+                    79 yıllık akademik geleneğinin en prestijli etkinliklerinden biridir. Bu seminerler,
+                    mühendislik alanındaki en güncel araştırmaları ve yenilikçi yaklaşımları akademik
                     camia ile buluşturmayı amaçlamaktadır.
                 </p>
                 <p>
-                    79. Yıl Mustafa İnan Seminerleri kapsamında gerçekleştirilmesini önerdiğiniz 
-                    sunumlara ilişkin konuşma başlıkları ile en fazla 250 kelime uzunluğundaki 
+                    79. Yıl Mustafa İnan Seminerleri kapsamında gerçekleştirilmesini önerdiğiniz
+                    sunumlara ilişkin konuşma başlıkları ile en fazla 250 kelime uzunluğundaki
                     konuşma özetlerinizi bekliyoruz.
                 </p>
                 <div class="about-stats">
@@ -1846,7 +2088,7 @@
                         <div class="stat-label">Yıllık Gelenek</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-value">7</div>
+                        <div class="stat-value">6</div>
                         <div class="stat-label">Haftalık Seminer</div>
                     </div>
                     <div class="stat-item">
@@ -1872,8 +2114,8 @@
                     </div>
                     <h3>Tarih & Saat</h3>
                     <p>
-                        <span class="highlight">8 Nisan – 20 Mayıs 2026</span> tarihleri arasında 
-                        her Çarşamba günü <span class="highlight">15:30 – 16:30</span> saatleri 
+                        <span class="highlight">8 Nisan – 20 Mayıs 2026</span> tarihleri arasında
+                        her Çarşamba günü <span class="highlight">15:30 – 16:30</span> saatleri
                         arasında gerçekleştirilecektir.
                     </p>
                 </div>
@@ -1941,7 +2183,8 @@
                     </div>
                     <div class="seminar-info">
                         <div class="seminar-speakers">Bahar Ayhan, Erol Lale, Gianluca Cusatis</div>
-                        <div class="seminar-title-text">Taze Betonun Ayrık Elemanlar Yöntemiyle Sayısal Modellenmesi</div>
+                        <div class="seminar-title-text">Taze Betonun Ayrık Elemanlar Yöntemiyle Sayısal Modellenmesi
+                        </div>
                     </div>
                     <div class="seminar-badge upcoming">Yaklaşıyor</div>
                 </div>
@@ -1955,7 +2198,8 @@
                     </div>
                     <div class="seminar-info">
                         <div class="seminar-speakers">Emre Gönülcü</div>
-                        <div class="seminar-title-text">Bina tipi taşıyıcı sistemlerde bir yapı sağlığı izleme yöntemi önerisi: basitleştirilmiş sayısal model ve hasar tespit algoritması</div>
+                        <div class="seminar-title-text">Bina tipi taşıyıcı sistemlerde bir yapı sağlığı izleme yöntemi
+                            önerisi: basitleştirilmiş sayısal model ve hasar tespit algoritması</div>
                     </div>
                     <div class="seminar-badge upcoming">Yaklaşıyor</div>
                 </div>
@@ -1969,7 +2213,8 @@
                     </div>
                     <div class="seminar-info">
                         <div class="seminar-speakers">Murat Çelik, Erol Demirkan, Ahmet Feyzi Yıldırım</div>
-                        <div class="seminar-title-text">Kayma deformasyonuna uğrayabilen fonksiyonel dereceli malzeme kirişlerde titreşim bileşenlerinin analitik ve sayısal incelenmesi</div>
+                        <div class="seminar-title-text">Kayma deformasyonuna uğrayabilen fonksiyonel dereceli malzeme
+                            kirişlerde titreşim bileşenlerinin analitik ve sayısal incelenmesi</div>
                     </div>
                     <div class="seminar-badge upcoming">Yaklaşıyor</div>
                 </div>
@@ -1983,7 +2228,8 @@
                     </div>
                     <div class="seminar-info">
                         <div class="seminar-speakers">Özgür Kırca</div>
-                        <div class="seminar-title-text">Deniz Yapıları Etrafında Dalga Kaynaklı Sıvılaşma Mekaniğinin Modellenmesi: Güncel Yaklaşımlar ve Büyük Ölçekli Deneyler</div>
+                        <div class="seminar-title-text">Deniz Yapıları Etrafında Dalga Kaynaklı Sıvılaşma Mekaniğinin
+                            Modellenmesi: Güncel Yaklaşımlar ve Büyük Ölçekli Deneyler</div>
                     </div>
                     <div class="seminar-badge upcoming">Yaklaşıyor</div>
                 </div>
@@ -1997,7 +2243,8 @@
                     </div>
                     <div class="seminar-info">
                         <div class="seminar-speakers">Osman Bulut, Ömer Canbey Cücemen</div>
-                        <div class="seminar-title-text">Kompozit/Hibrit Bileşenlerde Termal Yükleme Altında Gerilme Yığılmaları: Deneysel Fotoelastisite ve Sonlu Eleman Karşılaştırması</div>
+                        <div class="seminar-title-text">Kompozit/Hibrit Bileşenlerde Termal Yükleme Altında Gerilme
+                            Yığılmaları: Deneysel Fotoelastisite ve Sonlu Eleman Karşılaştırması</div>
                     </div>
                     <div class="seminar-badge upcoming">Yaklaşıyor</div>
                 </div>
@@ -2018,8 +2265,8 @@
                 <span style="color: var(--gold)">Paylaşın</span>
             </h2>
             <p class="cta-text">
-                79. Yıl Mustafa İnan Seminerleri kapsamında sunumunuzu gerçekleştirmek için 
-                konuşma başlığınızı ve en fazla 250 kelimelik özetinizi 20 Ocak 2026 tarihine 
+                79. Yıl Mustafa İnan Seminerleri kapsamında sunumunuzu gerçekleştirmek için
+                konuşma başlığınızı ve en fazla 250 kelimelik özetinizi 20 Ocak 2026 tarihine
                 kadar iletmenizi bekliyoruz.
             </p>
             <div class="cta-buttons">
@@ -2045,7 +2292,7 @@
                         <span>Mustafa İnan Seminerleri</span>
                     </div>
                     <p>
-                        İstanbul Teknik Üniversitesi İnşaat Mühendisliği Bölümü'nün 
+                        İstanbul Teknik Üniversitesi İnşaat Mühendisliği Bölümü'nün
                         79 yıllık akademik geleneğinin prestijli seminer serisi.
                     </p>
                 </div>
@@ -2121,15 +2368,15 @@
                 const diff = next.target - new Date();
                 if (diff <= 0) { updateCountdown(); return; } // Seminer başladı, bir sonrakine geç
 
-                const days  = Math.floor(diff / 86400000);
+                const days = Math.floor(diff / 86400000);
                 const hours = Math.floor((diff % 86400000) / 3600000);
-                const mins  = Math.floor((diff % 3600000)  / 60000);
-                const secs  = Math.floor((diff % 60000)    / 1000);
+                const mins = Math.floor((diff % 3600000) / 60000);
+                const secs = Math.floor((diff % 60000) / 1000);
 
-                document.getElementById('cd-days').textContent  = pad(days);
+                document.getElementById('cd-days').textContent = pad(days);
                 document.getElementById('cd-hours').textContent = pad(hours);
-                document.getElementById('cd-mins').textContent  = pad(mins);
-                document.getElementById('cd-secs').textContent  = pad(secs);
+                document.getElementById('cd-mins').textContent = pad(mins);
+                document.getElementById('cd-secs').textContent = pad(secs);
 
                 const info = document.getElementById('cdSeminarInfo');
                 if (info) info.textContent = next.speaker;
@@ -2147,7 +2394,7 @@
         document.addEventListener('mousemove', (e) => {
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
-            
+
             setTimeout(() => {
                 follower.style.left = e.clientX + 'px';
                 follower.style.top = e.clientY + 'px';
@@ -2189,12 +2436,12 @@
         // Scroll Reveal Animation
         function reveal() {
             const reveals = document.querySelectorAll('.reveal');
-            
+
             reveals.forEach(element => {
                 const windowHeight = window.innerHeight;
                 const elementTop = element.getBoundingClientRect().top;
                 const elementVisible = 150;
-                
+
                 if (elementTop < windowHeight - elementVisible) {
                     element.classList.add('active');
                 }
@@ -2205,7 +2452,7 @@
         reveal();
 
         // Seminar card date states (both full and mini cards)
-        (function() {
+        (function () {
             const today = new Date();
             today.setHours(0, 0, 0, 0);
 
@@ -2276,7 +2523,7 @@
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
@@ -2289,4 +2536,5 @@
         });
     </script>
 </body>
+
 </html>
