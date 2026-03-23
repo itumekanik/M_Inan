@@ -132,6 +132,10 @@
             list-style: none;
         }
 
+        /* Masaüstünde hamburger ve mobile menü gizli */
+        .hamburger { display: none; }
+        .mobile-menu { display: none; }
+
         nav.scrolled {
             background: rgba(10, 10, 15, 0.95);
             backdrop-filter: blur(20px);
@@ -1662,6 +1666,74 @@
             .nav-links {
                 display: none;
             }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 5px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 4px;
+                z-index: 1100;
+            }
+
+            .hamburger span {
+                display: block;
+                width: 24px;
+                height: 2px;
+                background: var(--text-primary);
+                border-radius: 2px;
+                transition: all 0.35s ease;
+                transform-origin: center;
+            }
+
+            .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+            .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+            .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+            .mobile-menu {
+                position: fixed;
+                inset: 0;
+                background: rgba(10,10,15,0.97);
+                backdrop-filter: blur(16px);
+                z-index: 1050;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.35s ease;
+            }
+
+            .mobile-menu.open {
+                opacity: 1;
+                pointer-events: all;
+            }
+
+            .mobile-menu ul {
+                list-style: none;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                gap: 2.5rem;
+            }
+
+            .mobile-menu ul li a {
+                font-family: 'Playfair Display', serif;
+                font-size: 2rem;
+                color: var(--text-primary);
+                text-decoration: none;
+                letter-spacing: 0.06em;
+                transition: color 0.25s;
+            }
+
+            .mobile-menu ul li a:hover { color: var(--gold); }
         }
 
         /* ── Responsive: Mobil 768px ── */
@@ -1870,8 +1942,21 @@
             <li><a href="#program">Program</a></li>
             <li><a href="#cta">İletişim</a></li>
         </ul>
-
+        <button class="hamburger" id="hamburger" aria-label="Menü" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
+
+    <!-- Mobil Menü Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#hero">Ana Sayfa</a></li>
+            <li><a href="#about">Hakkında</a></li>
+            <li><a href="#details">Detaylar</a></li>
+            <li><a href="#program">Program</a></li>
+            <li><a href="#cta">İletişim</a></li>
+        </ul>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
@@ -2533,6 +2618,27 @@
                     });
                 }
             });
+        });
+
+        // Hamburger Menü
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        function toggleMenu(open) {
+            hamburger.classList.toggle('open', open);
+            hamburger.setAttribute('aria-expanded', open);
+            mobileMenu.classList.toggle('open', open);
+            document.body.style.overflow = open ? 'hidden' : '';
+        }
+
+        hamburger.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.contains('open');
+            toggleMenu(!isOpen);
+        });
+
+        // Linke tıklanınca menüyü kapat
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => toggleMenu(false));
         });
     </script>
 </body>
