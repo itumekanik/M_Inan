@@ -380,6 +380,72 @@
             flex-wrap: wrap;
         }
 
+        /* Sıradaki Seminere Geri Sayım */
+        .next-seminar-countdown {
+            margin-bottom: 2rem;
+            padding: 1.1rem 1.5rem;
+            background: rgba(201,169,98,0.05);
+            border: 1px solid rgba(201,169,98,0.18);
+            border-radius: 12px;
+            display: inline-flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .countdown-label {
+            font-size: 0.72rem;
+            color: var(--gold);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .countdown-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--gold);
+            animation: blink 1.2s ease-in-out infinite;
+            flex-shrink: 0;
+        }
+        .countdown-units {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .countdown-unit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 44px;
+        }
+        .cu-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1;
+        }
+        .cu-label {
+            font-size: 0.6rem;
+            color: var(--text-muted);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-top: 0.15rem;
+        }
+        .countdown-sep {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--gold);
+            opacity: 0.5;
+            margin-bottom: 0.8rem;
+        }
+        .countdown-seminar-info {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            letter-spacing: 0.04em;
+        }
+
         .btn-primary {
             background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
             color: var(--bg-primary);
@@ -1610,6 +1676,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="hero-buttons">
                     <a href="#program" class="btn-primary">
                         <i class="fas fa-list"></i>
@@ -1700,6 +1767,35 @@
                             <div class="mini-badge upcoming">●</div>
                         </div>
 
+                    </div>
+                    <!-- Sıradaki Seminere Geri Sayım -->
+                    <div class="next-seminar-countdown" id="nextSeminarCountdown" style="margin: 0.75rem 0 0; padding: 0.8rem 1rem; border-radius: 10px; width: 100%; box-sizing: border-box;">
+                        <div class="countdown-label">
+                            <span class="countdown-dot"></span>
+                            Sıradaki Seminere
+                        </div>
+                        <div class="countdown-units">
+                            <div class="countdown-unit">
+                                <span class="cu-value" id="cd-days">--</span>
+                                <span class="cu-label">Gün</span>
+                            </div>
+                            <div class="countdown-sep">:</div>
+                            <div class="countdown-unit">
+                                <span class="cu-value" id="cd-hours">--</span>
+                                <span class="cu-label">Saat</span>
+                            </div>
+                            <div class="countdown-sep">:</div>
+                            <div class="countdown-unit">
+                                <span class="cu-value" id="cd-mins">--</span>
+                                <span class="cu-label">Dakika</span>
+                            </div>
+                            <div class="countdown-sep">:</div>
+                            <div class="countdown-unit">
+                                <span class="cu-value" id="cd-secs">--</span>
+                                <span class="cu-label">Saniye</span>
+                            </div>
+                        </div>
+                        <div class="countdown-seminar-info" id="cdSeminarInfo"></div>
                     </div>
                     <div class="hero-card-footer">
                         <div class="organizers">
@@ -1988,6 +2084,57 @@
                 document.getElementById('preloader').classList.add('hidden');
             }, 1000);
         });
+
+        // ── Sıradaki Seminere Geri Sayım ──────────────────────────────
+        (function initCountdown() {
+            // Seminer tarihleri ve konuşmacılar data-date özniteliklerinden okunuyor
+            const seminarData = [
+                { date: '2026-04-08', speaker: 'Ario Ceccotti' },
+                { date: '2026-04-15', speaker: 'Bahar Ayhan, Erol Lale, G. Cusatis' },
+                { date: '2026-04-22', speaker: 'Emre Gönülcü' },
+                { date: '2026-05-06', speaker: 'M. Çelik, E. Demirkan, A. F. Yıldırım' },
+                { date: '2026-05-13', speaker: 'Özgür Kırca' },
+                { date: '2026-05-20', speaker: 'Osman Bulut, Ö. C. Cücemen' }
+            ];
+
+            const pad = n => String(n).padStart(2, '0');
+
+            function getNextSeminar() {
+                const now = new Date();
+                for (const s of seminarData) {
+                    const [y, m, d] = s.date.split('-').map(Number);
+                    const seminarEnd = new Date(y, m - 1, d, 16, 30, 0); // 16:30 bitişi
+                    if (now < seminarEnd) return { target: new Date(y, m - 1, d, 15, 30, 0), speaker: s.speaker };
+                }
+                return null; // Tüm seminerler bitti
+            }
+
+            function updateCountdown() {
+                const next = getNextSeminar();
+                const wrap = document.getElementById('nextSeminarCountdown');
+                if (!next) { if (wrap) wrap.style.display = 'none'; return; }
+
+                const diff = next.target - new Date();
+                if (diff <= 0) { updateCountdown(); return; } // Seminer başladı, bir sonrakine geç
+
+                const days  = Math.floor(diff / 86400000);
+                const hours = Math.floor((diff % 86400000) / 3600000);
+                const mins  = Math.floor((diff % 3600000)  / 60000);
+                const secs  = Math.floor((diff % 60000)    / 1000);
+
+                document.getElementById('cd-days').textContent  = pad(days);
+                document.getElementById('cd-hours').textContent = pad(hours);
+                document.getElementById('cd-mins').textContent  = pad(mins);
+                document.getElementById('cd-secs').textContent  = pad(secs);
+
+                const info = document.getElementById('cdSeminarInfo');
+                if (info) info.textContent = next.speaker;
+            }
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        })();
+
 
         // Custom Cursor
         const cursor = document.getElementById('cursor');
