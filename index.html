@@ -569,6 +569,173 @@
             filter: grayscale(100%) brightness(2);
         }
 
+        /* Mini Schedule inside Hero Card */
+        .mini-schedule-label {
+            font-size: 0.72rem;
+            color: var(--gold);
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .mini-schedule-label::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            border-radius: 50%;
+            animation: blink 1.5s ease-in-out infinite;
+        }
+
+        .mini-schedule {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin-bottom: 1rem;
+        }
+
+        .mini-schedule::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        .mini-schedule::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .mini-schedule::-webkit-scrollbar-thumb {
+            background: rgba(201,169,98,0.25);
+            border-radius: 2px;
+        }
+
+        .mini-seminar {
+            display: grid;
+            grid-template-columns: 42px 1fr 16px;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            transition: background 0.25s;
+        }
+
+        .mini-seminar:last-child {
+            border-bottom: none;
+        }
+
+        .mini-seminar.active-mini {
+            background: rgba(201,169,98,0.06);
+            border-radius: 8px;
+            padding: 0.65rem 0.5rem;
+            margin: 0 -0.5rem;
+        }
+
+        .mini-date {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(201,169,98,0.08);
+            border-radius: 8px;
+            padding: 0.2rem 0.25rem;
+            line-height: 1.1;
+        }
+
+        .mini-day {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .mini-month {
+            font-size: 0.6rem;
+            color: var(--text-muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .mini-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+            min-width: 0;
+        }
+
+        .mini-speaker {
+            font-size: 0.72rem;
+            color: var(--gold-light);
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .mini-title {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            line-height: 1.35;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .mini-badge {
+            font-size: 0.65rem;
+            text-align: right;
+        }
+
+        .mini-badge.upcoming { color: rgba(201,169,98,0.35); }
+        .mini-badge.past { color: rgba(255,255,255,0.15); }
+        .mini-badge.today {
+            color: var(--gold);
+            animation: blink 1s ease-in-out infinite;
+        }
+        .mini-badge.next-up {
+            color: var(--gold);
+            font-size: 0.75rem;
+        }
+
+        /* Mini: geçmiş seminerlere soluk görünüm */
+        .mini-seminar.past-mini {
+            opacity: 0.35;
+        }
+        .mini-seminar.past-mini .mini-speaker,
+        .mini-seminar.past-mini .mini-title {
+            text-decoration: line-through;
+            text-decoration-color: rgba(255,255,255,0.15);
+        }
+        .mini-seminar.past-mini .mini-date {
+            background: rgba(255,255,255,0.03);
+        }
+        .mini-seminar.past-mini .mini-day {
+            color: var(--text-muted);
+        }
+
+        /* Mini: sıradaki seminer - öne çıkan */
+        .mini-seminar.next-up-mini {
+            background: rgba(201,169,98,0.09);
+            border-radius: 10px;
+            padding: 0.4rem 0.6rem;
+            margin: 0.15rem -0.6rem;
+            border: 1px solid rgba(201,169,98,0.25);
+            box-shadow: 0 0 18px rgba(201,169,98,0.08);
+        }
+        .mini-seminar.next-up-mini .mini-day {
+            font-size: 1.1rem;
+        }
+        .mini-seminar.next-up-mini .mini-title {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* Mini: sonraki seminerlere mat görünüm */
+        .mini-seminar.future-mini {
+            opacity: 0.55;
+        }
+
         /* Floating Elements */
         .floating-element {
             position: absolute;
@@ -999,6 +1166,263 @@
             color: var(--bg-primary);
         }
 
+        /* Seminer Programı */
+        .program {
+            padding: 8rem 4%;
+            position: relative;
+            background: var(--bg-primary);
+        }
+
+        .program::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 169, 98, 0.3), transparent);
+        }
+
+        .program-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .program-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .program-subtitle {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            letter-spacing: 0.08em;
+            margin-top: 0.75rem;
+        }
+
+        .seminar-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .seminar-card {
+            display: grid;
+            grid-template-columns: 50px 110px 1fr auto;
+            align-items: center;
+            gap: 2rem;
+            background: linear-gradient(145deg, rgba(26,26,37,0.7), rgba(18,18,26,0.9));
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 16px;
+            padding: 1.8rem 2.5rem;
+            transition: all 0.45s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .seminar-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--gold), var(--gold-dark));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .seminar-card:hover {
+            border-color: rgba(201,169,98,0.25);
+            background: linear-gradient(145deg, rgba(30,30,44,0.85), rgba(22,22,33,0.95));
+            transform: translateX(6px);
+        }
+
+        .seminar-card:hover::before {
+            opacity: 1;
+        }
+
+        .seminar-card.active-seminar {
+            border-color: rgba(201,169,98,0.4);
+            background: linear-gradient(145deg, rgba(201,169,98,0.07), rgba(18,18,26,0.9));
+        }
+
+        .seminar-card.active-seminar::before {
+            opacity: 1;
+        }
+
+        .seminar-index {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: rgba(201,169,98,0.25);
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .seminar-date-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(201,169,98,0.06);
+            border: 1px solid rgba(201,169,98,0.12);
+            border-radius: 12px;
+            padding: 0.8rem 1.2rem;
+            text-align: center;
+            min-width: 90px;
+        }
+
+        .seminar-day {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .seminar-month {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-top: 0.2rem;
+        }
+
+        .seminar-year {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-top: 0.1rem;
+        }
+
+        .seminar-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .seminar-speakers {
+            font-size: 0.82rem;
+            color: var(--gold-light);
+            letter-spacing: 0.05em;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .seminar-title-text {
+            font-size: 1rem;
+            color: var(--text-primary);
+            line-height: 1.55;
+            font-weight: 400;
+        }
+
+        .seminar-badge {
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: 0.45rem 1rem;
+            border-radius: 50px;
+            white-space: nowrap;
+        }
+
+        .seminar-badge.upcoming {
+            background: rgba(201,169,98,0.06);
+            color: rgba(201,169,98,0.5);
+            border: 1px solid rgba(201,169,98,0.12);
+        }
+
+        .seminar-badge.next-up {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--bg-primary);
+            border: none;
+            box-shadow: 0 4px 20px rgba(201,169,98,0.35);
+            animation: pulse-badge 2.5s ease-in-out infinite;
+        }
+
+        .seminar-badge.past {
+            background: transparent;
+            color: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .seminar-badge.today {
+            background: var(--gold);
+            color: var(--bg-primary);
+            animation: pulse-badge 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-badge {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(201,169,98,0.5); }
+            50% { box-shadow: 0 0 0 8px rgba(201,169,98,0); }
+        }
+
+        /* Sıradaki seminer - öne çıkan */
+        .seminar-card.next-up-card {
+            border-color: rgba(201,169,98,0.45);
+            background: linear-gradient(145deg, rgba(201,169,98,0.1), rgba(18,18,26,0.95));
+            box-shadow: 0 0 40px rgba(201,169,98,0.12), inset 0 0 0 1px rgba(201,169,98,0.2);
+        }
+        .seminar-card.next-up-card::before { opacity: 1; }
+        .seminar-card.next-up-card .seminar-index {
+            color: rgba(201,169,98,0.6);
+            font-size: 1.8rem;
+        }
+        .seminar-card.next-up-card .seminar-day {
+            font-size: 2.4rem;
+        }
+        .seminar-card.next-up-card .seminar-date-block {
+            background: rgba(201,169,98,0.15);
+            border-color: rgba(201,169,98,0.35);
+        }
+        .seminar-card.next-up-card .seminar-title-text {
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+
+        /* Geçmiş seminerlere soluk görünüm */
+        .seminar-card.past-card {
+            opacity: 0.38;
+            filter: grayscale(40%);
+        }
+        .seminar-card.past-card .seminar-title-text {
+            text-decoration: line-through;
+            text-decoration-color: rgba(255,255,255,0.2);
+        }
+        .seminar-card.past-card .seminar-day { color: var(--text-muted); }
+        .seminar-card.past-card .seminar-date-block {
+            background: rgba(255,255,255,0.02);
+            border-color: rgba(255,255,255,0.04);
+        }
+
+        /* Gelecekteki seminerlere mat görünüm */
+        .seminar-card.future-card {
+            opacity: 0.65;
+        }
+        .seminar-card.future-card .seminar-date-block {
+            background: rgba(201,169,98,0.03);
+            border-color: rgba(201,169,98,0.07);
+        }
+        .seminar-card.future-card .seminar-day { color: rgba(201,169,98,0.55); }
+
+        @media (max-width: 768px) {
+            .seminar-card {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding: 1.5rem;
+            }
+            .seminar-index {
+                display: none;
+            }
+            .seminar-date-block {
+                flex-direction: row;
+                gap: 0.5rem;
+                align-items: baseline;
+                width: fit-content;
+            }
+            .seminar-badge {
+                width: fit-content;
+            }
+        }
+
         /* Scroll Reveal Animations */
         .reveal {
             opacity: 0;
@@ -1104,6 +1528,7 @@
             <li><a href="#hero">Ana Sayfa</a></li>
             <li><a href="#about">Hakkında</a></li>
             <li><a href="#details">Detaylar</a></li>
+            <li><a href="#program">Program</a></li>
             <li><a href="#cta">İletişim</a></li>
         </ul>
         <button class="nav-cta" onclick="window.location.href='#cta'">Başvur</button>
@@ -1166,28 +1591,81 @@
             <div class="hero-visual">
                 <div class="hero-card">
                     <div class="hero-card-badge">79</div>
-                    <div class="countdown-label">Son Başvuru Tarihine Kalan</div>
-                    <div class="countdown" id="countdown">
-                        <div class="countdown-item">
-                            <div class="countdown-value" id="days">--</div>
-                            <div class="countdown-unit">Gün</div>
+                    <div class="mini-schedule-label">Seminer Programı</div>
+                    <div class="mini-schedule">
+
+                        <div class="mini-seminar" data-date="2026-04-08">
+                            <div class="mini-date">
+                                <span class="mini-day">08</span>
+                                <span class="mini-month">Nis</span>
+                            </div>
+                            <div class="mini-info">
+                                <div class="mini-speaker">Ario Ceccotti</div>
+                                <div class="mini-title">The tree has grown</div>
+                            </div>
+                            <div class="mini-badge upcoming">●</div>
                         </div>
-                        <div class="countdown-item">
-                            <div class="countdown-value" id="hours">--</div>
-                            <div class="countdown-unit">Saat</div>
+
+                        <div class="mini-seminar" data-date="2026-04-15">
+                            <div class="mini-date">
+                                <span class="mini-day">15</span>
+                                <span class="mini-month">Nis</span>
+                            </div>
+                            <div class="mini-info">
+                                <div class="mini-speaker">Bahar Ayhan, Erol Lale, G. Cusatis</div>
+                                <div class="mini-title">Taze Betonun Ayrık Elemanlar Yöntemiyle Sayısal Modellenmesi</div>
+                            </div>
+                            <div class="mini-badge upcoming">●</div>
                         </div>
-                        <div class="countdown-item">
-                            <div class="countdown-value" id="minutes">--</div>
-                            <div class="countdown-unit">Dakika</div>
+
+                        <div class="mini-seminar" data-date="2026-04-22">
+                            <div class="mini-date">
+                                <span class="mini-day">22</span>
+                                <span class="mini-month">Nis</span>
+                            </div>
+                            <div class="mini-info">
+                                <div class="mini-speaker">Emre Gönülcü</div>
+                                <div class="mini-title">Yapı Sağlığı İzleme Yöntemi Önerisi</div>
+                            </div>
+                            <div class="mini-badge upcoming">●</div>
                         </div>
-                        <div class="countdown-item">
-                            <div class="countdown-value" id="seconds">--</div>
-                            <div class="countdown-unit">Saniye</div>
+
+                        <div class="mini-seminar" data-date="2026-05-06">
+                            <div class="mini-date">
+                                <span class="mini-day">06</span>
+                                <span class="mini-month">May</span>
+                            </div>
+                            <div class="mini-info">
+                                <div class="mini-speaker">M. Çelik, E. Demirkan, A. F. Yıldırım</div>
+                                <div class="mini-title">Fonksiyonel Dereceli Malzeme Kirişlerde Titreşim</div>
+                            </div>
+                            <div class="mini-badge upcoming">●</div>
                         </div>
-                    </div>
-                    <div class="deadline-info">
-                        <h4>Son Başvuru</h4>
-                        <p>20 Ocak 2026</p>
+
+                        <div class="mini-seminar" data-date="2026-05-13">
+                            <div class="mini-date">
+                                <span class="mini-day">13</span>
+                                <span class="mini-month">May</span>
+                            </div>
+                            <div class="mini-info">
+                                <div class="mini-speaker">Özgür Kırca</div>
+                                <div class="mini-title">Deniz Yapıları Etrafında Sıvılaşma Mekaniği</div>
+                            </div>
+                            <div class="mini-badge upcoming">●</div>
+                        </div>
+
+                        <div class="mini-seminar" data-date="2026-05-20">
+                            <div class="mini-date">
+                                <span class="mini-day">20</span>
+                                <span class="mini-month">May</span>
+                            </div>
+                            <div class="mini-info">
+                                <div class="mini-speaker">Osman Bulut, Ö. C. Cücemen</div>
+                                <div class="mini-title">Termal Yükleme Altında Gerilme Yığılmaları</div>
+                            </div>
+                            <div class="mini-badge upcoming">●</div>
+                        </div>
+
                     </div>
                     <div class="hero-card-footer">
                         <div class="organizers">
@@ -1286,6 +1764,104 @@
                         İTÜ İnşaat Mühendisliği Bölümü
                     </p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seminer Programı Section -->
+    <section class="program" id="program">
+        <div class="program-container">
+            <div class="program-header reveal">
+                <span class="section-label">2025–2026 Bahar Dönemi</span>
+                <h2 class="section-title">Seminer <span style="color: var(--gold)">Programı</span></h2>
+                <p class="program-subtitle">Her Çarşamba 15:30 – 16:30 &bull; Nahit Kumbasar Konferans Salonu</p>
+            </div>
+            <div class="seminar-list">
+
+                <div class="seminar-card reveal" data-date="2026-04-08">
+                    <div class="seminar-index">01</div>
+                    <div class="seminar-date-block">
+                        <div class="seminar-day">08</div>
+                        <div class="seminar-month">Nisan</div>
+                        <div class="seminar-year">2026</div>
+                    </div>
+                    <div class="seminar-info">
+                        <div class="seminar-speakers">Ario Ceccotti</div>
+                        <div class="seminar-title-text">The tree has grown</div>
+                    </div>
+                    <div class="seminar-badge upcoming">Yaklaşıyor</div>
+                </div>
+
+                <div class="seminar-card reveal" data-date="2026-04-15">
+                    <div class="seminar-index">02</div>
+                    <div class="seminar-date-block">
+                        <div class="seminar-day">15</div>
+                        <div class="seminar-month">Nisan</div>
+                        <div class="seminar-year">2026</div>
+                    </div>
+                    <div class="seminar-info">
+                        <div class="seminar-speakers">Bahar Ayhan, Erol Lale, Gianluca Cusatis</div>
+                        <div class="seminar-title-text">Taze Betonun Ayrık Elemanlar Yöntemiyle Sayısal Modellenmesi</div>
+                    </div>
+                    <div class="seminar-badge upcoming">Yaklaşıyor</div>
+                </div>
+
+                <div class="seminar-card reveal" data-date="2026-04-22">
+                    <div class="seminar-index">03</div>
+                    <div class="seminar-date-block">
+                        <div class="seminar-day">22</div>
+                        <div class="seminar-month">Nisan</div>
+                        <div class="seminar-year">2026</div>
+                    </div>
+                    <div class="seminar-info">
+                        <div class="seminar-speakers">Emre Gönülcü</div>
+                        <div class="seminar-title-text">Bina tipi taşıyıcı sistemlerde bir yapı sağlığı izleme yöntemi önerisi: basitleştirilmiş sayısal model ve hasar tespit algoritması</div>
+                    </div>
+                    <div class="seminar-badge upcoming">Yaklaşıyor</div>
+                </div>
+
+                <div class="seminar-card reveal" data-date="2026-05-06">
+                    <div class="seminar-index">04</div>
+                    <div class="seminar-date-block">
+                        <div class="seminar-day">06</div>
+                        <div class="seminar-month">Mayıs</div>
+                        <div class="seminar-year">2026</div>
+                    </div>
+                    <div class="seminar-info">
+                        <div class="seminar-speakers">Murat Çelik, Erol Demirkan, Ahmet Feyzi Yıldırım</div>
+                        <div class="seminar-title-text">Kayma deformasyonuna uğrayabilen fonksiyonel dereceli malzeme kirişlerde titreşim bileşenlerinin analitik ve sayısal incelenmesi</div>
+                    </div>
+                    <div class="seminar-badge upcoming">Yaklaşıyor</div>
+                </div>
+
+                <div class="seminar-card reveal" data-date="2026-05-13">
+                    <div class="seminar-index">05</div>
+                    <div class="seminar-date-block">
+                        <div class="seminar-day">13</div>
+                        <div class="seminar-month">Mayıs</div>
+                        <div class="seminar-year">2026</div>
+                    </div>
+                    <div class="seminar-info">
+                        <div class="seminar-speakers">Özgür Kırca</div>
+                        <div class="seminar-title-text">Deniz Yapıları Etrafında Dalga Kaynaklı Sıvılaşma Mekaniğinin Modellenmesi: Güncel Yaklaşımlar ve Büyük Ölçekli Deneyler</div>
+                    </div>
+                    <div class="seminar-badge upcoming">Yaklaşıyor</div>
+                </div>
+
+                <div class="seminar-card reveal" data-date="2026-05-20">
+                    <div class="seminar-index">06</div>
+                    <div class="seminar-date-block">
+                        <div class="seminar-day">20</div>
+                        <div class="seminar-month">Mayıs</div>
+                        <div class="seminar-year">2026</div>
+                    </div>
+                    <div class="seminar-info">
+                        <div class="seminar-speakers">Osman Bulut, Ömer Canbey Cücemen</div>
+                        <div class="seminar-title-text">Kompozit/Hibrit Bileşenlerde Termal Yükleme Altında Gerilme Yığılmaları: Deneysel Fotoelastisite ve Sonlu Eleman Karşılaştırması</div>
+                    </div>
+                    <div class="seminar-badge upcoming">Yaklaşıyor</div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -1436,6 +2012,76 @@
 
         window.addEventListener('scroll', reveal);
         reveal();
+
+        // Seminar card date states (both full and mini cards)
+        (function() {
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            // --- Full seminar cards ---
+            const fullCards = Array.from(document.querySelectorAll('.seminar-card[data-date]'));
+            let nextUpFullFound = false;
+            fullCards.forEach(card => {
+                const semDate = new Date(card.getAttribute('data-date'));
+                semDate.setHours(0, 0, 0, 0);
+                const badge = card.querySelector('.seminar-badge');
+                if (!badge) return;
+
+                if (semDate.getTime() === today.getTime()) {
+                    // Today = treat as next-up
+                    badge.className = 'seminar-badge today';
+                    badge.textContent = 'Bugün — Saat 15:30';
+                    card.classList.add('active-seminar', 'next-up-card');
+                    nextUpFullFound = true;
+                } else if (semDate < today) {
+                    // Past
+                    badge.className = 'seminar-badge past';
+                    badge.textContent = 'Tamamlandı';
+                    card.classList.add('past-card');
+                } else if (!nextUpFullFound) {
+                    // First upcoming = highlight
+                    badge.className = 'seminar-badge next-up';
+                    badge.textContent = 'Sıradaki';
+                    card.classList.add('next-up-card');
+                    nextUpFullFound = true;
+                } else {
+                    // Rest upcoming
+                    badge.className = 'seminar-badge upcoming';
+                    badge.textContent = 'Yaklaşıyor';
+                    card.classList.add('future-card');
+                }
+            });
+
+            // --- Mini seminar rows in hero card ---
+            const miniRows = Array.from(document.querySelectorAll('.mini-seminar[data-date]'));
+            let nextUpMiniFound = false;
+            miniRows.forEach(row => {
+                const semDate = new Date(row.getAttribute('data-date'));
+                semDate.setHours(0, 0, 0, 0);
+                const badge = row.querySelector('.mini-badge');
+                if (!badge) return;
+
+                if (semDate.getTime() === today.getTime()) {
+                    badge.className = 'mini-badge today';
+                    badge.textContent = '●';
+                    row.classList.add('next-up-mini');
+                    nextUpMiniFound = true;
+                } else if (semDate < today) {
+                    badge.className = 'mini-badge past';
+                    badge.textContent = '✓';
+                    row.classList.add('past-mini');
+                } else if (!nextUpMiniFound) {
+                    badge.className = 'mini-badge next-up';
+                    badge.textContent = '●';
+                    row.classList.add('next-up-mini');
+                    nextUpMiniFound = true;
+                } else {
+                    badge.className = 'mini-badge upcoming';
+                    badge.textContent = '●';
+                    row.classList.add('future-mini');
+                }
+            });
+        })();
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
