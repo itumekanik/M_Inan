@@ -1,0 +1,55 @@
+79. YIL MUSTAFA İNAN SEMİNERLERİ — DUYURU
+
+İstanbul Teknik Üniversitesi İnşaat Mühendisliği Bölümü olarak, köklü akademik geleneğimizin bir parçası olan Mustafa İnan Seminerleri'nin 79. yılında yeniden sizlerle buluşmanın coşkusunu yaşıyoruz.
+
+Bu yıl, 8 Nisan – 20 Mayıs 2026 tarihleri arasında, her Çarşamba günü saat 15:30'da, İTÜ İnşaat Fakültesi Nahit Kumbasar Konferans Salonu'nda gerçekleştirilecek olan seminer serisine davetlisiniz.
+
+Seminerler, inşaat mühendisliğinin farklı alt alanlarından seçkin akademisyen ve araştırmacıların güncel çalışmalarını aktaracağı altı oturumdan oluşmaktadır. Bu yılki program kapsamında; ahşap yapı malzemeleri ve deprem performansı, taze betonun sayısal modellenmesi, yapı sağlığı izleme yöntemleri, fonksiyonel derecelendirilmiş malzemelerde titreşim analizi, deniz yapıları etrafında zemin sıvılaşması ve termal yükleme altında gerilme yığılmaları konularında yaşayan bilginin aktarımına zemin hazırlanacaktır.
+
+Seminerler hibrit formatta düzenlenecek olup, fiziksel katılımın yanı sıra Zoom üzerinden çevrimiçi olarak da takip edilebilecektir. İlk oturuma ait Zoom bağlantısı:
+https://zoom.us/j/97570347412?pwd=tpstOKgHFwBuabzu3ilZahc4V1aEQd.1
+Toplantı Kimliği: 975 7034 7412 | Parola: 243553
+(Bağlantı kapasitesi: azami 100 katılımcı)
+
+Seminer programının tamamına, konuşmacı özetlerine ve güncel Zoom bağlantılarına aşağıdaki web adresinden ulaşabilirsiniz:
+https://itumekanik.github.io/M_Inan/
+
+Mustafa İnan Seminerleri, İTÜ İnşaat Mühendisliği Bölümü'nün 1947'den bu yana kesintisiz sürdürdüğü akademik seminer geleneğidir. Bölümümüzün kurucu hocalarından Prof. Dr. Mustafa İnan'ın anısına düzenlenen bu etkinlik; araştırmacıları, öğrencileri ve sektör temsilcilerini bir araya getirerek bilgi ve deneyimin kuşaklar arasında aktarılmasına katkı sunmaya devam etmektedir.
+
+Tüm akademisyenlerimizi, araştırmacılarımızı, lisans ve lisansüstü öğrencilerimizi ve konuya ilgi duyan herkesi seminerlerimize bekliyoruz.
+
+Saygılarımızla,
+
+İnşaat Mühendisliği Bölüm Başkanlığı
+İstanbul Teknik Üniversitesi
+
+Düzenleme Kurulu:
+Prof. Dr. Nihal ERATLI (eratli@itu.edu.tr)
+Doç. Dr. Murat YILMAZ (yilmazmura@itu.edu.tr)
+Doç. Dr. Aslı Y. DAYIOĞLU (yalcinas@itu.eu.tr)
+
+---
+Program Özeti:
+
+1. 8 Nisan 2026  | Bahar Ayhan, Erol Lale, Gianluca Cusatis
+   "Taze Betonun Ayrık Elemanlar Yöntemiyle Sayısal Modellenmesi"
+
+2. 15 Nisan 2026 | Ario Ceccotti
+   "The Tree Has Grown"
+
+3. 22 Nisan 2026 | Emre Gönülcü
+   "Bina Tipi Taşıyıcı Sistemlerde Bir Yapı Sağlığı İzleme Yöntemi Önerisi"
+
+4. 6 Mayıs 2026  | Murat Çelik, Erol Demirkan, Ahmet Feyzi Yıldırım
+   "Kayma Deformasyonuna Uğrayabilen Fonksiyonel Dereceli Malzeme Kirişlerde Titreşim Bileşenlerinin Analitik ve Sayısal İncelenmesi"
+
+5. 13 Mayıs 2026 | Özgür Kırca
+   "Deniz Yapıları Etrafında Sıvılaşma Mekaniği"
+
+6. 20 Mayıs 2026 | Osman Bulut, Ömer Canbey Cücemen
+   "Kompozit/Hibrit Bileşenlerde Termal Yükleme Altında Gerilme Yığılmaları: Deneysel Fotoelastisite ve Sonlu Eleman Karşılaştırması"
+
+---
+Yer: İTÜ İnşaat Fakültesi, Nahit Kumbasar Konferans Salonu, Maslak Kampüsü, İstanbul
+Tarih: 8 Nisan – 20 Mayıs 2026 | Her Çarşamba | Saat 15:30 – 16:30
+Web: https://itumekanik.github.io/M_Inan/
