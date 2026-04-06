@@ -373,7 +373,7 @@
 
         .hero-meta-item {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 0.8rem;
         }
 
@@ -387,6 +387,8 @@
             border-radius: 10px;
             color: var(--gold);
             font-size: 0.9rem;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
         }
 
         .hero-meta-item span {
@@ -1815,6 +1817,15 @@
             opacity: 0.6;
         }
 
+        .mini-venue {
+            font-size: 0.6rem;
+            color: var(--gold);
+            opacity: 0.75;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.2rem;
+        }
+
         /* Hibrit + Zoom sadece aktif (sıradaki) seminerde görünür */
         .mini-seminar .mini-hybrid,
         .mini-seminar .mini-zoom,
@@ -2274,7 +2285,10 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <span>Yer</span>
-                            <strong>Nahit Kumbasar Konferans Salonu</strong>
+                            <div style="display:flex; flex-direction:column;">
+                                <strong id="heroVenueNK">Nahit Kumbasar Konferans Salonu</strong>
+                                <span id="heroVenueVC" style="display:block; font-size:0.78em; font-weight:500;">Vural Cinemre Seminer Salonu</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -2313,6 +2327,7 @@
                                     <span class="mini-hybrid">🖥 Hibrit</span>
                                     <a href="https://zoom.us/j/97570347412?pwd=tpstOKgHFwBuabzu3ilZahc4V1aEQd.1"
                                         target="_blank" class="mini-zoom"><i class="fas fa-video"></i> Zoom</a>
+                                    <span class="mini-venue"><i class="fas fa-map-marker-alt"></i> Vural Cinemre Seminer Salonu</span>
                                 </div>
                             </div>
                             <div class="mini-badge upcoming">●</div>
@@ -2333,6 +2348,7 @@
                                 <div class="mini-actions">
                                     <span class="mini-hybrid">🖥 Hibrit</span>
                                     <span class="mini-zoom-soon">Zoom yakında</span>
+                                    <span class="mini-venue"><i class="fas fa-map-marker-alt"></i> Nahit Kumbasar Konferans Salonu</span>
                                 </div>
                             </div>
                             <div class="mini-badge upcoming">●</div>
@@ -2353,6 +2369,7 @@
                                 <div class="mini-actions">
                                     <span class="mini-hybrid">🖥 Hibrit</span>
                                     <span class="mini-zoom-soon">Zoom yakında</span>
+                                    <span class="mini-venue"><i class="fas fa-map-marker-alt"></i> Nahit Kumbasar Konferans Salonu</span>
                                 </div>
                             </div>
                             <div class="mini-badge upcoming">●</div>
@@ -2373,6 +2390,7 @@
                                 <div class="mini-actions">
                                     <span class="mini-hybrid">🖥 Hibrit</span>
                                     <span class="mini-zoom-soon">Zoom yakında</span>
+                                    <span class="mini-venue"><i class="fas fa-map-marker-alt"></i> Vural Cinemre Seminer Salonu</span>
                                 </div>
                             </div>
                             <div class="mini-badge upcoming">●</div>
@@ -2393,6 +2411,7 @@
                                 <div class="mini-actions">
                                     <span class="mini-hybrid">🖥 Hibrit</span>
                                     <span class="mini-zoom-soon">Zoom yakında</span>
+                                    <span class="mini-venue"><i class="fas fa-map-marker-alt"></i> Vural Cinemre Seminer Salonu</span>
                                 </div>
                             </div>
                             <div class="mini-badge upcoming">●</div>
@@ -2413,6 +2432,7 @@
                                 <div class="mini-actions">
                                     <span class="mini-hybrid">🖥 Hibrit</span>
                                     <span class="mini-zoom-soon">Zoom yakında</span>
+                                    <span class="mini-venue"><i class="fas fa-map-marker-alt"></i> Nahit Kumbasar Konferans Salonu</span>
                                 </div>
                             </div>
                             <div class="mini-badge upcoming">●</div>
@@ -3111,6 +3131,14 @@
 
         // Mini-schedule'da sıradaki seminere is-next sınıfı ata
         (function markNextMiniSeminar() {
+            const venueMap = {
+                0: 'Vural Cinemre Seminer Salonu',
+                1: 'Nahit Kumbasar Konferans Salonu',
+                2: 'Nahit Kumbasar Konferans Salonu',
+                3: 'Vural Cinemre Seminer Salonu',
+                4: 'Vural Cinemre Seminer Salonu',
+                5: 'Nahit Kumbasar Konferans Salonu'
+            };
             const now = new Date();
             const miniRows = document.querySelectorAll('.mini-seminar[data-date]');
             let marked = false;
@@ -3119,6 +3147,26 @@
                 if (!marked && d > now) {
                     row.classList.add('is-next');
                     marked = true;
+                    const idx = parseInt(row.dataset.index);
+                    const activeVenue = venueMap[idx];
+                    const nk = document.getElementById('heroVenueNK');
+                    const vc = document.getElementById('heroVenueVC');
+                    if (nk && vc) {
+                        const isVC = activeVenue.includes('Vural');
+                        // Aktif olan: bold, tam opaklık
+                        // Sönük olan: normal ağırlık, küçük, düşük opaklık
+                        nk.style.opacity    = isVC ? '0.35' : '1';
+                        nk.style.fontWeight = isVC ? '400'  : '700';
+                        nk.style.fontSize   = isVC ? '0.78em' : '1em';
+                        nk.style.color      = isVC ? 'var(--text-muted)' : 'var(--text-primary)';
+                        nk.style.order      = isVC ? '1' : '0';
+                        nk.tagName === 'STRONG' && !isVC ? nk.setAttribute('style','') : null;
+                        vc.style.opacity    = isVC ? '1'   : '0.35';
+                        vc.style.fontWeight = isVC ? '700' : '400';
+                        vc.style.fontSize   = isVC ? '1em' : '0.78em';
+                        vc.style.color      = isVC ? 'var(--text-primary)' : 'var(--text-muted)';
+                        vc.style.order      = isVC ? '0' : '1';
+                    }
                 }
             });
         })();
