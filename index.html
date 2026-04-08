@@ -2285,9 +2285,9 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <span>Yer</span>
-                            <div style="display:flex; flex-direction:column;">
-                                <strong id="heroVenueNK">Nahit Kumbasar Konferans Salonu</strong>
-                                <span id="heroVenueVC" style="display:block; font-size:0.78em; font-weight:500;">Vural Cinemre Seminer Salonu</span>
+                            <div id="heroVenueContainer" style="display:flex; flex-direction:column;">
+                                <strong id="venueActive">Nahit Kumbasar Konferans Salonu</strong>
+                                <span id="venueInactive" style="display:block; font-size:0.78em; font-weight:500; opacity:0.4; color:var(--text-muted);">Vural Cinemre Seminer Salonu</span>
                             </div>
                         </div>
                     </div>
@@ -2897,9 +2897,9 @@
             function getNextSeminar() {
                 const now = new Date();
                 for (const s of seminarData) {
-                    const [y, m, d] = s.date.split('-').map(Number);
-                    const seminarEnd = new Date(y, m - 1, d, 16, 30, 0); // 16:30 bitişi
-                    if (now < seminarEnd) return { target: new Date(y, m - 1, d, 15, 30, 0), speaker: s.speaker };
+                    const seminarStart = new Date(s.date + 'T12:30:00Z'); // 15:30 TR = UTC+3
+                    const seminarEnd   = new Date(s.date + 'T14:30:00Z'); // 17:30 TR = UTC+3
+                    if (now < seminarEnd) return { target: seminarStart, speaker: s.speaker };
                 }
                 return null; // Tüm seminerler bitti
             }
@@ -2997,40 +2997,40 @@
 
         // Seminar card date states (both full and mini cards)
         (function () {
-            const today = new Date();
-            today.setHours(0, 0, 0, 0);
+            const now = new Date();
 
             // --- Full seminar cards ---
             const fullCards = Array.from(document.querySelectorAll('.seminar-card[data-date]'));
             let nextUpFullFound = false;
             fullCards.forEach(card => {
-                const semDate = new Date(card.getAttribute('data-date'));
-                semDate.setHours(0, 0, 0, 0);
+                const dateStr = card.getAttribute('data-date');
+                const semEnd = new Date(dateStr + 'T14:30:00Z'); // 17:30 TR
+                const semDateMidnight = new Date(dateStr);
+                const isToday = semDateMidnight.toDateString() === now.toDateString();
+
                 const badge = card.querySelector('.seminar-badge');
                 if (!badge) return;
 
-                if (semDate.getTime() === today.getTime()) {
-                    // Today = treat as next-up
-                    badge.className = 'seminar-badge today';
-                    badge.textContent = 'Bugün — Saat 15:30';
-                    card.classList.add('active-seminar', 'next-up-card');
-                    nextUpFullFound = true;
-                } else if (semDate < today) {
-                    // Past
+                if (semEnd > now) {
+                    if (!nextUpFullFound) {
+                        if (isToday) {
+                            badge.className = 'seminar-badge today';
+                            badge.textContent = 'Bugün — Saat 15:30';
+                        } else {
+                            badge.className = 'seminar-badge next-up';
+                            badge.textContent = 'Sıradaki';
+                        }
+                        card.classList.add('active-seminar', 'next-up-card');
+                        nextUpFullFound = true;
+                    } else {
+                        badge.className = 'seminar-badge upcoming';
+                        badge.textContent = 'Yaklaşıyor';
+                        card.classList.add('future-card');
+                    }
+                } else {
                     badge.className = 'seminar-badge past';
                     badge.textContent = 'Tamamlandı';
                     card.classList.add('past-card');
-                } else if (!nextUpFullFound) {
-                    // First upcoming = highlight
-                    badge.className = 'seminar-badge next-up';
-                    badge.textContent = 'Sıradaki';
-                    card.classList.add('next-up-card');
-                    nextUpFullFound = true;
-                } else {
-                    // Rest upcoming
-                    badge.className = 'seminar-badge upcoming';
-                    badge.textContent = 'Yaklaşıyor';
-                    card.classList.add('future-card');
                 }
             });
 
@@ -3038,29 +3038,29 @@
             const miniRows = Array.from(document.querySelectorAll('.mini-seminar[data-date]'));
             let nextUpMiniFound = false;
             miniRows.forEach(row => {
-                const semDate = new Date(row.getAttribute('data-date'));
-                semDate.setHours(0, 0, 0, 0);
+                const dateStr = row.getAttribute('data-date');
+                const semEnd = new Date(dateStr + 'T14:30:00Z'); // 17:30 TR
+                const semDateMidnight = new Date(dateStr);
+                const isToday = semDateMidnight.toDateString() === now.toDateString();
+
                 const badge = row.querySelector('.mini-badge');
                 if (!badge) return;
 
-                if (semDate.getTime() === today.getTime()) {
-                    badge.className = 'mini-badge today';
-                    badge.textContent = '●';
-                    row.classList.add('next-up-mini');
-                    nextUpMiniFound = true;
-                } else if (semDate < today) {
+                if (semEnd > now) {
+                    if (!nextUpMiniFound) {
+                        badge.className = isToday ? 'mini-badge today' : 'mini-badge next-up';
+                        badge.textContent = '●';
+                        row.classList.add('next-up-mini');
+                        nextUpMiniFound = true;
+                    } else {
+                        badge.className = 'mini-badge upcoming';
+                        badge.textContent = '●';
+                        row.classList.add('future-mini');
+                    }
+                } else {
                     badge.className = 'mini-badge past';
                     badge.textContent = '✓';
                     row.classList.add('past-mini');
-                } else if (!nextUpMiniFound) {
-                    badge.className = 'mini-badge next-up';
-                    badge.textContent = '●';
-                    row.classList.add('next-up-mini');
-                    nextUpMiniFound = true;
-                } else {
-                    badge.className = 'mini-badge upcoming';
-                    badge.textContent = '●';
-                    row.classList.add('future-mini');
                 }
             });
         })();
@@ -3129,8 +3129,8 @@
             }, 600); // scroll bitmesini bekle
         }
 
-        // Mini-schedule'da sıradaki seminere is-next sınıfı ata
-        (function markNextMiniSeminar() {
+        // Mini-schedule'da sıradaki seminere is-next sınıfı ata (her dakika güncellenir)
+        function markNextMiniSeminar() {
             const venueMap = {
                 0: 'Vural Cinemre Seminer Salonu',
                 1: 'Nahit Kumbasar Konferans Salonu',
@@ -3141,35 +3141,30 @@
             };
             const now = new Date();
             const miniRows = document.querySelectorAll('.mini-seminar[data-date]');
+
+            // Önce tüm is-next sınıflarını temizle
+            miniRows.forEach(r => r.classList.remove('is-next'));
+
             let marked = false;
             miniRows.forEach(row => {
-                const d = new Date(row.dataset.date + 'T15:30:00');
-                if (!marked && d > now) {
+                const dEnd = new Date(row.dataset.date + 'T14:30:00Z'); // 17:30 TR = UTC+3
+                if (!marked && dEnd > now) {
                     row.classList.add('is-next');
                     marked = true;
                     const idx = parseInt(row.dataset.index);
                     const activeVenue = venueMap[idx];
-                    const nk = document.getElementById('heroVenueNK');
-                    const vc = document.getElementById('heroVenueVC');
-                    if (nk && vc) {
+                    const activeEl = document.getElementById('venueActive');
+                    const inactiveEl = document.getElementById('venueInactive');
+                    if (activeEl && inactiveEl) {
                         const isVC = activeVenue.includes('Vural');
-                        // Aktif olan: bold, tam opaklık
-                        // Sönük olan: normal ağırlık, küçük, düşük opaklık
-                        nk.style.opacity    = isVC ? '0.35' : '1';
-                        nk.style.fontWeight = isVC ? '400'  : '700';
-                        nk.style.fontSize   = isVC ? '0.78em' : '1em';
-                        nk.style.color      = isVC ? 'var(--text-muted)' : 'var(--text-primary)';
-                        nk.style.order      = isVC ? '1' : '0';
-                        nk.tagName === 'STRONG' && !isVC ? nk.setAttribute('style','') : null;
-                        vc.style.opacity    = isVC ? '1'   : '0.35';
-                        vc.style.fontWeight = isVC ? '700' : '400';
-                        vc.style.fontSize   = isVC ? '1em' : '0.78em';
-                        vc.style.color      = isVC ? 'var(--text-primary)' : 'var(--text-muted)';
-                        vc.style.order      = isVC ? '0' : '1';
+                        activeEl.textContent = isVC ? 'Vural Cinemre Seminer Salonu' : 'Nahit Kumbasar Konferans Salonu';
+                        inactiveEl.textContent = isVC ? 'Nahit Kumbasar Konferans Salonu' : 'Vural Cinemre Seminer Salonu';
                     }
                 }
             });
-        })();
+        }
+        markNextMiniSeminar();
+        setInterval(markNextMiniSeminar, 60000); // Her dakika kontrol et
     </script>
 </body>
 
